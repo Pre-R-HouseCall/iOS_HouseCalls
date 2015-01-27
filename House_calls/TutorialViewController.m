@@ -22,7 +22,7 @@
     
     // Create page view controller
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"TutorialPageViewController"];
-    self.pageViewController.dataSource = self;
+    self.pageViewController.dataSource = (id<UIPageViewControllerDataSource>)self;
     
     TutorialPageContentViewController *startingViewController = [self viewControllerAtIndex:0];
     NSArray *viewControllers = @[startingViewController];
