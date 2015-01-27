@@ -11,8 +11,11 @@
 #import "Doctors.h"
 #import "BioViewController.h"
 #import "FormViewController.h"
+#import "LoginViewController.h"
+#import "User.h"
 @interface DoctorTableViewController ()
-@property (nonatomic) NSMutableArray *doctors;
+@property (nonatomic) NSMutableArray* doctors;
+@property (nonatomic) User* user;
 @end
 
 @implementation DoctorTableViewController
@@ -23,6 +26,13 @@
     }
     return _doctors;
 }
+
+-(User*)user {
+    if(!_user) {
+        _user = [[User alloc]init];
+    }
+    return _user;
+}
 - (void)viewDidLoad {
     Doctors *doc1 = [[Doctors alloc]init];
     doc1.name = @"Robert Bobby";
@@ -32,6 +42,7 @@
     doc2.name = @"Michae Johnson";
     doc2.bio = @"Nicest Doctor in the world";
     doc2.availability = 1;
+    [self user];
     
     [super viewDidLoad];
     [self.doctors addObject: doc1];
@@ -70,8 +81,23 @@
     }
     doctorCell.buttonToBio.tag = indexPath.row;
     doctorCell.buttonToForm.tag = indexPath.row;
+    [doctorCell.buttonToForm addTarget:self action:@selector(formButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [doctorCell.buttonToBio addTarget:self action:@selector(bioButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     return doctorCell;
+}
+
+-(void) formButtonClicked:(UIButton*)sender {
+    if(self.user.login) {
+        [self performSegueWithIdentifier:@"segueForm" sender: sender];
+    }
+    else {
+        [self performSegueWithIdentifier:@"segueLogin" sender:sender];
+    }
+}
+
+-(void)bioButtonClicked:(UIButton*)sender {
+    [self performSegueWithIdentifier:@"segueBio" sender:sender];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -84,6 +110,14 @@
         [controller setDoc: self.doctors[[sender tag]]];
         //[self.navigationController pushViewController:controller animated:YES];
 
+    }
+}
+
+-(IBAction) unwindToList:(UIStoryboardSegue *)segue {
+    if([[segue identifier]isEqualToString:@"loggedIn"]) {
+        LoginViewController* controller = (LoginViewController*)[segue sourceViewController];
+        [self setUser: controller.user];
+        
     }
 }
 
