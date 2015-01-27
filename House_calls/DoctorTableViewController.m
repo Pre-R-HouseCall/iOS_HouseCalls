@@ -13,18 +13,28 @@
 #import "FormViewController.h"
 #import "LoginViewController.h"
 #import "User.h"
+
+#define getDataURL @"http://54.191.98.90/api/ios_connect/getAllDoctors.php"
+
+
 @interface DoctorTableViewController ()
-@property (nonatomic) NSMutableArray* doctors;
 @property (nonatomic) User* user;
 @end
 
 @implementation DoctorTableViewController
 
--(NSMutableArray *)doctors {
-    if(!(_doctors)) {
-        _doctors = [[NSMutableArray alloc]init];
+-(NSMutableArray *)doctorArray {
+    if(!(_doctorArray)) {
+        _doctorArray = [[NSMutableArray alloc]init];
     }
-    return _doctors;
+    return _doctorArray;
+}
+
+-(NSMutableArray *)jsonArray {
+    if(!(_jsonArray)) {
+        _jsonArray = [[NSMutableArray alloc]init];
+    }
+    return _jsonArray;
 }
 
 -(User*)user {
@@ -34,19 +44,10 @@
     return _user;
 }
 - (void)viewDidLoad {
-    Doctors *doc1 = [[Doctors alloc]init];
-    doc1.name = @"Robert Bobby";
-    doc1.bio = @"He is a great man and no one can stop him!";
-    doc1.availability = 2;
-    Doctors* doc2 = [[Doctors alloc]init];
-    doc2.name = @"Michae Johnson";
-    doc2.bio = @"Nicest Doctor in the world";
-    doc2.availability = 1;
     [self user];
-    
     [super viewDidLoad];
-    [self.doctors addObject: doc1];
-    [self.doctors addObject: doc2];
+    
+    [self retrieveData];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -70,14 +71,15 @@
 */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [self.doctors count];
+    return [self.doctorArray count];
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DoctorCell *doctorCell = [tableView dequeueReusableCellWithIdentifier:@"doctorCell"];
-    Doctors* tempdoc = [self.doctors objectAtIndex:indexPath.row];
-    if (tempdoc.name) {
-        doctorCell.doctorName.text  = tempdoc.name;
+    Doctors* tempdoc = [self.doctorArray objectAtIndex:indexPath.row];
+   
+    if (tempdoc) {
+        doctorCell.doctorName.text  = [tempdoc getFullName];
     }
     doctorCell.buttonToBio.tag = indexPath.row;
     doctorCell.buttonToForm.tag = indexPath.row;
@@ -103,11 +105,11 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"segueBio" ]) {
         BioViewController* controller = (BioViewController*)[segue destinationViewController];
-        [controller setDoc: self.doctors[[sender tag]]];
+        [controller setDoc: self.doctorArray[[sender tag]]];
         //[self.navigationController pushViewController:controller animated:YES];
     } else if ([[segue identifier] isEqualToString:@"segueForm"]) {
         FormViewController* controller = (FormViewController*) [segue destinationViewController];
-        [controller setDoc: self.doctors[[sender tag]]];
+        [controller setDoc: self.doctorArray[[sender tag]]];
         //[self.navigationController pushViewController:controller animated:YES];
 
     }
@@ -165,5 +167,37 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark -
+#pragma mark Class Methods
+
+-(void) retrieveData {
+    NSURL * url = [NSURL URLWithString:getDataURL];
+    NSData * data = [NSData dataWithContentsOfURL:url];
+    self.jsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    
+    self.doctorArray = [[NSMutableArray alloc] init];
+    
+    for(int i = 0; i < self.jsonArray.count; i++) {
+        NSString * dID = [[self.jsonArray objectAtIndex:i] objectForKey:@"DoctorId"];
+        NSString * dFirstname = [[self.jsonArray objectAtIndex:i] objectForKey:@"FirstName"];
+        NSString * dLastname = [[self.jsonArray objectAtIndex:i] objectForKey:@"LastName"];
+        NSString * dUsername = [[self.jsonArray objectAtIndex:i] objectForKey:@"Username"];
+        NSString * dAvailable = [[self.jsonArray objectAtIndex:i] objectForKey:@"Availability"];
+        NSString * dDistance = [[self.jsonArray objectAtIndex:i] objectForKey:@"Distance"];
+        NSString * dDescription = [[self.jsonArray objectAtIndex:i] objectForKey:@"Description"];
+        NSString * dImage = [[self.jsonArray objectAtIndex:i] objectForKey:@"ProfileImage"];
+        
+        
+        [self.doctorArray addObject:[[Doctors alloc] initWithDoctorName: dID andUsername:dUsername andFirstname:dFirstname andLastname:dLastname andAvailablity:dAvailable andDistance:dDistance andImage:dImage andDesc:dDescription]];
+        
+    }
+    
+    [self.tableView reloadData];
+    
+    
+}
+
+
 
 @end

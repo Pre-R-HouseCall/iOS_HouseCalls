@@ -10,4 +10,12 @@
 
 @interface DoctorTableViewController : UITableViewController
 
+@property (nonatomic, strong) NSMutableArray * jsonArray;
+@property (nonatomic, strong) NSMutableArray * doctorArray;
+
+#pragma mark -
+#pragma mark Class Methods
+
+-(void) retrieveData;
+
 @end

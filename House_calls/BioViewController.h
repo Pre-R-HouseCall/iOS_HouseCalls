@@ -9,4 +9,6 @@
 #import "Doctors.h"
 @interface BioViewController : UIViewController
 @property (nonatomic) Doctors* doc;
+
+-(void) setLabels;
 @end

@@ -1,33 +1,29 @@
 //
-//  FormViewController.m
+//  TutorialPageContentViewController.m
 //  House_calls
 //
-//  Created by Timothy Acorda on 1/26/15.
+//  Created by Marek Zhang on 1/14/15.
 //  Copyright (c) 2015 Timothy Acorda. All rights reserved.
 //
 
-#import "FormViewController.h"
-#import "DoctorTableViewController.h"
+#import "TutorialPageContentViewController.h"
 
-@interface FormViewController ()
-@property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
+@interface TutorialPageContentViewController ()
 
 @end
 
-@implementation FormViewController
+@implementation TutorialPageContentViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navItem.title= [NSString stringWithFormat:@"Form for Dr. %@", [self.doc getFullName]];
-    // Do any additional setup after loading the view.
+
+    self.backgroundImageView.image = [UIImage imageNamed:self.imageFile];
+    self.titleLabel.text = self.titleText;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-- (IBAction)backButtonPressed:(id)sender {
-    [[self navigationController] popViewControllerAnimated:YES];
 }
 
 /*

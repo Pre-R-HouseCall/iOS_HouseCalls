@@ -9,6 +9,7 @@
 #import "BioViewController.h"
 #import "Doctors.h"
 @interface BioViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *statusText;
 @property (weak, nonatomic) IBOutlet UILabel *bioText;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
 
@@ -29,8 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.bioText.text = self.doc.bio;
-    self.navItem.title = self.doc.name;
+    [self setLabels];
     // Do any additional setup after loading the view.
 }
 
@@ -38,6 +38,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void) setLabels {
+    self.bioText.text = self.doc.docDescription;
+    self.navItem.title = [self.doc getFullName];
+    self.statusText.text = self.doc.docAvailable;
+}
+
+
 
 /*
 #pragma mark - Navigation
