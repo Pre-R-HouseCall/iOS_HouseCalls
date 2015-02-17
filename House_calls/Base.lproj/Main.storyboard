@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WOx-vN-4pG">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Form for Doctor-->
@@ -13,7 +14,7 @@
                         <viewControllerLayoutGuide type="bottom" id="vzd-Sm-4eQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rah-gZ-t5D">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FlN-MN-tpG">
@@ -87,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iej-fG-PR2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1906" y="-90"/>
+            <point key="canvasLocation" x="1335.5" y="48.5"/>
         </scene>
         <!--Doctor-->
         <scene sceneID="V2f-Ce-YGg">
@@ -98,7 +99,7 @@
                         <viewControllerLayoutGuide type="bottom" id="nfq-4X-ArX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6ib-yL-7XD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzu-vi-TqO">
@@ -140,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ewJ-R6-psr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1219.5" y="951.5"/>
+            <point key="canvasLocation" x="1335.5" y="985.5"/>
         </scene>
         <!--Login Screen-->
         <scene sceneID="95m-n1-R6p">
@@ -151,39 +152,43 @@
                         <viewControllerLayoutGuide type="bottom" id="oW5-BS-CNp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pzq-GS-nSD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rK0-jQ-Xv0">
-                                <rect key="frame" x="168" y="144" width="79" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aGV-1t-9CX">
-                                <rect key="frame" x="80" y="173" width="254" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo1" translatesAutoresizingMaskIntoConstraints="NO" id="z3R-6z-JK0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="673"/>
+                            </imageView>
+                            <textField clipsSubviews="YES" alpha="0.59999999999999964" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aGV-1t-9CX">
+                                <rect key="frame" x="60" y="171" width="254" height="30"/>
+                                <color key="backgroundColor" red="0.62307257400000005" green="0.84796463820000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rLy-nV-m60">
-                                <rect key="frame" x="80" y="353" width="254" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.59999999999999964" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rLy-nV-m60">
+                                <rect key="frame" x="60" y="201" width="254" height="30"/>
+                                <color key="backgroundColor" red="0.62307257400000005" green="0.84796463820000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXa-3p-SAl">
-                                <rect key="frame" x="169" y="324" width="76" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTL-E4-j79">
-                                <rect key="frame" x="164" y="411" width="86" height="64"/>
+                            <button opaque="NO" alpha="0.74999999999999978" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTL-E4-j79">
+                                <rect key="frame" x="60" y="239" width="127" height="64"/>
+                                <color key="backgroundColor" red="0.62307257400000005" green="0.84796463820000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="gtc-1u-5nv" kind="unwind" identifier="loggedIn" unwindAction="unwindToList:" id="i4u-ZU-eiD"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.74999999999999978" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBf-iW-9gH">
+                                <rect key="frame" x="195" y="239" width="119" height="64"/>
+                                <color key="backgroundColor" red="0.62352941176470589" green="0.84705882352941175" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -191,19 +196,38 @@
                     <navigationItem key="navigationItem" title="Login Screen" id="1Pf-pd-tOJ"/>
                     <connections>
                         <outlet property="loginButton" destination="gTL-E4-j79" id="ITT-zo-Lqz"/>
+                        <segue destination="thP-XR-EfA" kind="show" identifier="segueRegistration" id="rkH-rN-tOW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6yX-CJ-nBH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="gtc-1u-5nv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1906" y="730"/>
+            <point key="canvasLocation" x="1775.5" y="515.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Xcm-h1-pgO">
+            <objects>
+                <viewController id="thP-XR-EfA" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rdy-xH-it2"/>
+                        <viewControllerLayoutGuide type="bottom" id="PQP-t5-4tt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bQg-VV-Eek">
+                        <rect key="frame" x="0.0" y="64" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zjh-mm-61T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1775.5" y="1332.5"/>
         </scene>
         <!--Doctor Table View Controller-->
         <scene sceneID="eH3-Kc-1KJ">
             <objects>
                 <tableViewController id="ryc-Ua-VwO" customClass="DoctorTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" id="ZCV-XQ-kTk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -258,7 +282,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A5N-bA-nFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1220" y="71"/>
+            <point key="canvasLocation" x="839.5" y="545.5"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="N9U-gy-8I0">
@@ -268,7 +292,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4l-c9-wpN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="104.5" y="191.5"/>
+            <point key="canvasLocation" x="-21.5" y="75.5"/>
         </scene>
         <!--Tutorial View Controller-->
         <scene sceneID="k8W-ab-eut">
@@ -279,11 +303,13 @@
                         <viewControllerLayoutGuide type="bottom" id="aSa-GL-abq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fWe-SM-hTQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0r-Wd-yPj">
-                                <rect key="frame" x="0.0" y="698" width="414" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0r-Wd-yPj">
+                                <rect key="frame" x="0.0" y="489" width="600" height="111"/>
+                                <color key="backgroundColor" red="0.52156862749999999" green="0.66666666669999997" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Skip">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -293,12 +319,16 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aSa-GL-abq" firstAttribute="top" secondItem="w0r-Wd-yPj" secondAttribute="bottom" id="7t7-cV-iCg"/>
+                            <constraint firstItem="w0r-Wd-yPj" firstAttribute="leading" secondItem="fWe-SM-hTQ" secondAttribute="leadingMargin" constant="-16" id="TEk-iP-9TZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="w0r-Wd-yPj" secondAttribute="trailing" constant="-16" id="v2t-mW-RRo"/>
+                        </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eL0-Vk-oue" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-396" y="580"/>
+            <point key="canvasLocation" x="-646" y="540"/>
         </scene>
         <!--Tutorial Page Content View Controller-->
         <scene sceneID="mll-fq-SzU">
@@ -309,22 +339,21 @@
                         <viewControllerLayoutGuide type="bottom" id="Xpc-vl-4L8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Idv-hU-rRJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oMZ-eR-pJm">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmW-vu-hJd">
                                 <rect key="frame" x="68" y="20" width="239" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oMZ-eR-pJm">
+                                <rect key="frame" x="113" y="0.0" width="375" height="667"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="oMZ-eR-pJm" id="CXX-Ff-DIW"/>
                         <outlet property="titleLabel" destination="jmW-vu-hJd" id="jLs-uI-XEy"/>
@@ -332,7 +361,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LIw-2M-UYf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="104.5" y="989.5"/>
+            <point key="canvasLocation" x="-80" y="1049"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aur-60-4Rd">
@@ -340,9 +369,10 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UDC-VE-k5t" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Err-Yx-Wr8">
+                    <navigationBar key="navigationBar" alpha="0.14999999999999969" contentMode="scaleToFill" id="Err-Yx-Wr8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.62307257401315785" green="0.84796463815789469" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -351,7 +381,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I2W-GY-eWO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="571" y="580"/>
+            <point key="canvasLocation" x="406.5" y="545.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="photo1" width="2880" height="1920"/>
+    </resources>
 </document>
