@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController<NSURLConnectionDelegate>
 @property (nonatomic)User* user;
-
+@property NSMutableData* responseData;
 @end
 

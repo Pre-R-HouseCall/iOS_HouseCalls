@@ -9,7 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface User : NSObject
-@property NSString* Name;
+@property NSString* firstName;
+@property NSString* lastName;
+@property NSInteger userID;
+@property NSString* email;
 @property NSString* Username;
 @property NSString* Password;
 @property NSString* address;
