@@ -25,6 +25,7 @@
 		2EBF45641A7762EF001BA7A6 /* page1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBF45611A7762EF001BA7A6 /* page1.png */; };
 		2EBF45651A7762EF001BA7A6 /* page2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBF45621A7762EF001BA7A6 /* page2.png */; };
 		2EBF45661A7762EF001BA7A6 /* page3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBF45631A7762EF001BA7A6 /* page3.png */; };
+		2ED3A4871AAC5B810062095A /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED3A4861AAC5B810062095A /* RegistrationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		2EBF45611A7762EF001BA7A6 /* page1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page1.png; sourceTree = "<group>"; };
 		2EBF45621A7762EF001BA7A6 /* page2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page2.png; sourceTree = "<group>"; };
 		2EBF45631A7762EF001BA7A6 /* page3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page3.png; sourceTree = "<group>"; };
+		2ED3A4851AAC5B810062095A /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
+		2ED3A4861AAC5B810062095A /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,8 @@
 				2EBE7D421A65997F00D76DDA /* LoginViewController.h */,
 				2EBE7D431A65997F00D76DDA /* LoginViewController.m */,
 				2EBE7D451A65997F00D76DDA /* Main.storyboard */,
+				2ED3A4851AAC5B810062095A /* RegistrationViewController.h */,
+				2ED3A4861AAC5B810062095A /* RegistrationViewController.m */,
 				2EBF45581A7732CC001BA7A6 /* User.h */,
 				2EBF45591A7732CC001BA7A6 /* User.m */,
 				2EBF45521A76F7B0001BA7A6 /* BioViewController.h */,
@@ -295,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E0966751A67A2B700FC1604 /* DoctorTableViewController.m in Sources */,
+				2ED3A4871AAC5B810062095A /* RegistrationViewController.m in Sources */,
 				2EBE7D441A65997F00D76DDA /* LoginViewController.m in Sources */,
 				2EBF455A1A7732CC001BA7A6 /* User.m in Sources */,
 				2EBF45571A7710CD001BA7A6 /* FormViewController.m in Sources */,
