@@ -11,5 +11,6 @@
 @interface LoginViewController : UIViewController<NSURLConnectionDelegate>
 @property (nonatomic)User* user;
 @property NSMutableData* responseData;
+@property (nonatomic, strong) NSMutableDictionary* jsonArray;
 @end
 
