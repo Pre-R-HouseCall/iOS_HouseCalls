@@ -36,9 +36,9 @@
     return _user;
 }
 
--(NSMutableArray *)jsonArray {
+-(NSMutableDictionary *)jsonArray {
     if(!(_jsonArray)) {
-        _jsonArray = [[NSMutableArray alloc]init];
+        _jsonArray = [[NSMutableDictionary alloc]init];
     }
     return _jsonArray;
 }
@@ -75,48 +75,24 @@
     if([output isEqualToString:@"No Such User Found"]) {
         self.handler.text = @"User does not exist!";
     } else {
-        
         self.jsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
         
         NSLog(@"%lu\n", (unsigned long)[self.jsonArray count]);
-        NSString* ID = [self.jsonArray objectForKey:0] ;
-        NSLog(@"%@\n", ID);
-        /*NSLog(@"%@\n", [self.jsonArray objectAtIndex:0]);
-        NSLog(@"%@\n", [self.jsonArray objectAtIndex:1]);
-        NSLog(@"%@\n", [self.jsonArray objectAtIndex:2]);
-
-        /*
-        NSString * Firstname = [self.jsonArray objectAtIndex:1];
-        NSLog(@"%@\n", Firstname);
-        NSString * Lastname = [self.jsonArray objectAtIndex:2];
-        NSLog(@"%@\n", Lastname);
-
-
-        NSString * Email = [self.jsonArray objectAtIndex:3];
-        NSLog(@"%@\n", Email);
-
-        NSString * Password= [self.jsonArray objectAtIndex:4];
-        NSLog(@"%@\n", Password);
-
-        NSString * Phonenumber= [self.jsonArray objectAtIndex:5];
-        NSLog(@"%@\n", Phonenumber);
-        
-        
-        NSString * Username = [self.jsonArray objectAtIndex:6];
-        NSLog(@"%@\n", Username);
-        //NSString * Image = [[self.jsonArray objectAtIndex:0] objectForKey:@"ProfileImage"];
-                [defaults setObject:ID forKey:@"ID"];
+        NSString* ID = [self.jsonArray objectForKey:@"UserId"];
+        NSString * Firstname = [self.jsonArray objectForKey:@"FirstName"];
+        NSString * Lastname = [self.jsonArray objectForKey:@"LastName"];
+        NSString * Email = [self.jsonArray objectForKey:@"Email"];
+        NSString * Password= [self.jsonArray objectForKey:@"Password"];
+        NSString * Phonenumber= [self.jsonArray objectForKey:@"PhoneNumber"];
+        NSString * Username = [self.jsonArray objectForKey:@"Username"];
+        [defaults setObject:ID forKey:@"ID"];
         [defaults setObject:Firstname forKey:@"Firstname"];
         [defaults setObject:Lastname forKey:@"Lastname"];
         [defaults setObject:Username forKey:@"Username"];
         [defaults setObject:Email forKey:@"Email"];
         [defaults setObject:Password forKey:@"Password"];
         [defaults setObject:Phonenumber forKey:@"Phonenumber"];
-        //if(Image) {
-        //[defaults setObject:Image forKey:@"Image"];
-        //}
         [defaults synchronize];
-        */
         self.handler.text = @"Successful login!";
     }
 }
