@@ -90,7 +90,10 @@
 }
 
 -(void) formButtonClicked:(UIButton*)sender {
-    if(self.user.login) {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    
+    if([defaults objectForKey:@"ID"] != NULL) {
         [self performSegueWithIdentifier:@"segueForm" sender: sender];
     }
     else {
