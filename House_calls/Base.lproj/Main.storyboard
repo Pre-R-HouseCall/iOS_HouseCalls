@@ -268,8 +268,11 @@
                             <outlet property="delegate" destination="ryc-Ua-VwO" id="46I-Ze-JH0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="WoP-FG-9fq"/>
+                    <navigationItem key="navigationItem" id="WoP-FG-9fq">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="ryN-vq-v8a"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="sidebarButton" destination="ryN-vq-v8a" id="3De-HZ-adU"/>
                         <segue destination="4dN-tG-3oE" kind="show" identifier="segueForm" id="Py7-KW-jQ3"/>
                         <segue destination="TLS-dt-CG2" kind="show" identifier="segueBio" id="rpj-hj-GLb"/>
                         <segue destination="fEj-nc-qsf" kind="show" identifier="segueLogin" id="5ik-kU-WLm"/>
@@ -287,7 +290,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4l-c9-wpN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-397.5" y="-202.5"/>
+            <point key="canvasLocation" x="-755.5" y="56.5"/>
         </scene>
         <!--Tutorial View Controller-->
         <scene sceneID="k8W-ab-eut">
@@ -309,7 +312,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="UDC-VE-k5t" kind="show" id="Lq6-BJ-61B"/>
+                                    <segue destination="g4t-4F-7De" kind="show" id="cWq-G1-PdF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -324,7 +327,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eL0-Vk-oue" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-972" y="536"/>
+            <point key="canvasLocation" x="-1196.5" y="535.5"/>
         </scene>
         <!--Tutorial Page Content View Controller-->
         <scene sceneID="mll-fq-SzU">
@@ -364,13 +367,76 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LIw-2M-UYf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-274" y="1245"/>
+            <point key="canvasLocation" x="-755.5" y="934.5"/>
+        </scene>
+        <!--Reveal View Controller-->
+        <scene sceneID="KI1-h1-Nw5">
+            <objects>
+                <viewController title="Reveal View Controller" id="g4t-4F-7De" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QZw-vK-AI6"/>
+                        <viewControllerLayoutGuide type="bottom" id="h0r-5P-VRp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G7w-bp-Xn0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="UDC-VE-k5t" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="JqG-kR-mkk"/>
+                        <segue destination="E6W-rF-U2O" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="Kck-Mo-WLb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3zy-pS-xoX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-157.5" y="-342.5"/>
+        </scene>
+        <!--Sidebar-->
+        <scene sceneID="JDa-kC-9Ib">
+            <objects>
+                <viewController title="Sidebar" id="E6W-rF-U2O" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oKJ-PV-hac"/>
+                        <viewControllerLayoutGuide type="bottom" id="lBq-68-uwL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2im-Pn-FBB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4o-Ep-IA6">
+                                <rect key="frame" x="117" y="53" width="141" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMA-gm-qkL">
+                                <rect key="frame" x="117" y="148" width="141" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dot-wL-9Fy">
+                                <rect key="frame" x="117" y="316" width="141" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="veT-bq-9Ft" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="457.5" y="-342.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aur-60-4Rd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UDC-VE-k5t" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" alpha="0.14999999999999969" contentMode="scaleToFill" id="Err-Yx-Wr8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -383,7 +449,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I2W-GY-eWO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-285" y="536"/>
+            <point key="canvasLocation" x="-184" y="467"/>
         </scene>
     </scenes>
 </document>

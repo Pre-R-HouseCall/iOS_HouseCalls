@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSMutableArray * jsonArray;
 @property (nonatomic, strong) NSMutableArray * doctorArray;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
 #pragma mark -
 #pragma mark Class Methods
