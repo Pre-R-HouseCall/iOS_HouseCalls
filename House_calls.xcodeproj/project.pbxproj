@@ -25,7 +25,8 @@
 		2EBF45641A7762EF001BA7A6 /* page1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBF45611A7762EF001BA7A6 /* page1.png */; };
 		2EBF45651A7762EF001BA7A6 /* page2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBF45621A7762EF001BA7A6 /* page2.png */; };
 		2EBF45661A7762EF001BA7A6 /* page3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBF45631A7762EF001BA7A6 /* page3.png */; };
-		2ED3A4871AAC5B810062095A /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED3A4861AAC5B810062095A /* RegistrationViewController.m */; };
+		EAD599651AAC63E70015BE1C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD599641AAC63E70015BE1C /* SWRevealViewController.m */; };
+		EAD599681AAC679A0015BE1C /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD599671AAC679A0015BE1C /* SidebarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,8 +73,10 @@
 		2EBF45611A7762EF001BA7A6 /* page1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page1.png; sourceTree = "<group>"; };
 		2EBF45621A7762EF001BA7A6 /* page2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page2.png; sourceTree = "<group>"; };
 		2EBF45631A7762EF001BA7A6 /* page3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page3.png; sourceTree = "<group>"; };
-		2ED3A4851AAC5B810062095A /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
-		2ED3A4861AAC5B810062095A /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
+		EAD599631AAC63E70015BE1C /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		EAD599641AAC63E70015BE1C /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		EAD599661AAC679A0015BE1C /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
+		EAD599671AAC679A0015BE1C /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,9 @@
 		2EBE7D3A1A65997F00D76DDA /* House_calls */ = {
 			isa = PBXGroup;
 			children = (
+				EAD599621AAC63930015BE1C /* SWRevealViewController */,
+				EAD599661AAC679A0015BE1C /* SidebarViewController.h */,
+				EAD599671AAC679A0015BE1C /* SidebarViewController.m */,
 				2EBF455B1A775EB1001BA7A6 /* TutorialPageContentViewController.h */,
 				2EBF455C1A775EB1001BA7A6 /* TutorialPageContentViewController.m */,
 				2EBF455D1A775EB1001BA7A6 /* TutorialViewController.h */,
@@ -187,6 +193,15 @@
 		2EBE7D631A65A19600D76DDA /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
+			sourceTree = "<group>";
+		};
+		EAD599621AAC63930015BE1C /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EAD599631AAC63E70015BE1C /* SWRevealViewController.h */,
+				EAD599641AAC63E70015BE1C /* SWRevealViewController.m */,
+			);
+			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAD599681AAC679A0015BE1C /* SidebarViewController.m in Sources */,
 				2E0966751A67A2B700FC1604 /* DoctorTableViewController.m in Sources */,
 				2ED3A4871AAC5B810062095A /* RegistrationViewController.m in Sources */,
 				2EBE7D441A65997F00D76DDA /* LoginViewController.m in Sources */,
@@ -311,6 +327,7 @@
 				2EBE7D3E1A65997F00D76DDA /* main.m in Sources */,
 				2EBF455F1A775EB1001BA7A6 /* TutorialPageContentViewController.m in Sources */,
 				2EBF45601A775EB1001BA7A6 /* TutorialViewController.m in Sources */,
+				EAD599651AAC63E70015BE1C /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

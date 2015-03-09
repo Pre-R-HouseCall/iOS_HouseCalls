@@ -13,6 +13,7 @@
 #import "FormViewController.h"
 #import "LoginViewController.h"
 #import "User.h"
+#import "SWRevealViewController.h"
 
 #define getDataURL @"http://54.191.98.90/api/ios_connect/getAllDoctors.php"
 
@@ -46,6 +47,14 @@
 - (void)viewDidLoad {
     [self user];
     [super viewDidLoad];
+    
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
+        [self.sidebarButton setTarget: self.revealViewController];
+        [self.sidebarButton setAction: @selector( revealToggle: )];
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
     
     [self retrieveData];
     
