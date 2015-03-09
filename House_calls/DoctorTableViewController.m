@@ -56,6 +56,11 @@
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
     
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIFont fontWithName:@"Avenir" size:30],
+      NSFontAttributeName, [UIColor whiteColor], NSForegroundColorAttributeName, nil]];
+    
     [self retrieveData];
     
     // Uncomment the following line to preserve selection between presentations.

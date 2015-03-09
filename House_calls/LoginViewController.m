@@ -23,6 +23,9 @@
     [self createConnection];
     //self.handler.text = [[NSString alloc] initWithData:self.responseData encoding:NSASCIIStringEncoding];
 }
+- (IBAction)registrationPressed:(id)sender {
+    [self performSegueWithIdentifier:@"segueRegistration" sender:sender];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -84,11 +87,9 @@
         NSString * Email = [self.jsonArray objectForKey:@"Email"];
         NSString * Password= [self.jsonArray objectForKey:@"Password"];
         NSString * Phonenumber= [self.jsonArray objectForKey:@"PhoneNumber"];
-        NSString * Username = [self.jsonArray objectForKey:@"Username"];
         [defaults setObject:ID forKey:@"ID"];
         [defaults setObject:Firstname forKey:@"Firstname"];
         [defaults setObject:Lastname forKey:@"Lastname"];
-        [defaults setObject:Username forKey:@"Username"];
         [defaults setObject:Email forKey:@"Email"];
         [defaults setObject:Password forKey:@"Password"];
         [defaults setObject:Phonenumber forKey:@"Phonenumber"];

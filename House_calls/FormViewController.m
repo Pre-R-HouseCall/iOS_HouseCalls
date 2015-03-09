@@ -11,6 +11,9 @@
 
 @interface FormViewController ()
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
+@property (strong, nonatomic) IBOutlet UITextField *firstNameTextField;
+@property (strong, nonatomic) IBOutlet UITextField *lastNameTextField;
+@property (strong, nonatomic) IBOutlet UITextField *phoneNumberTextField;
 
 @end
 
@@ -18,7 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.navItem.title= [NSString stringWithFormat:@"Form for Dr. %@", [self.doc getFullName]];
+    self.firstNameTextField.text = [defaults objectForKey:@"Firstname"];
+    self.lastNameTextField.text = [defaults objectForKey:@"Lastname"];
+    self.phoneNumberTextField.text = [defaults objectForKey:@"Phonenumber"];
     // Do any additional setup after loading the view.
 }
 

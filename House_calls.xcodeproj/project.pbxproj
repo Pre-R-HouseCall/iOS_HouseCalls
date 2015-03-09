@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2E0966751A67A2B700FC1604 /* DoctorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0966741A67A2B700FC1604 /* DoctorTableViewController.m */; };
+		2E429F871AAD1ECE00DBE0C4 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E429F861AAD1ECE00DBE0C4 /* RegistrationViewController.m */; };
+		2E429F891AAD742B00DBE0C4 /* NavBar_menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E429F881AAD742B00DBE0C4 /* NavBar_menu_icon.png */; };
+		2E429F8B1AAD743600DBE0C4 /* NavBar_search_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E429F8A1AAD743600DBE0C4 /* NavBar_search_icon.png */; };
+		2E429F8D1AAD743F00DBE0C4 /* NavBar_wordmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E429F8C1AAD743F00DBE0C4 /* NavBar_wordmark.png */; };
+		2E429F8F1AAD830400DBE0C4 /* NavBar_menu_icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E429F8E1AAD830400DBE0C4 /* NavBar_menu_icon2.png */; };
+		2E429F911AAD845A00DBE0C4 /* NavBar_menu_icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E429F901AAD845A00DBE0C4 /* NavBar_menu_icon3.png */; };
 		2EA905A61A75B88C00E50502 /* Doctors.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA905A51A75B88C00E50502 /* Doctors.m */; };
 		2EA905A91A75BDA300E50502 /* DoctorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA905A81A75BDA300E50502 /* DoctorCell.m */; };
 		2EBE7D3E1A65997F00D76DDA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBE7D3D1A65997F00D76DDA /* main.m */; };
@@ -42,6 +48,13 @@
 /* Begin PBXFileReference section */
 		2E0966731A67A2B700FC1604 /* DoctorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorTableViewController.h; sourceTree = "<group>"; };
 		2E0966741A67A2B700FC1604 /* DoctorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorTableViewController.m; sourceTree = "<group>"; };
+		2E429F851AAD1ECE00DBE0C4 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
+		2E429F861AAD1ECE00DBE0C4 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
+		2E429F881AAD742B00DBE0C4 /* NavBar_menu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBar_menu_icon.png; sourceTree = "<group>"; };
+		2E429F8A1AAD743600DBE0C4 /* NavBar_search_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBar_search_icon.png; sourceTree = "<group>"; };
+		2E429F8C1AAD743F00DBE0C4 /* NavBar_wordmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBar_wordmark.png; sourceTree = "<group>"; };
+		2E429F8E1AAD830400DBE0C4 /* NavBar_menu_icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBar_menu_icon2.png; sourceTree = "<group>"; };
+		2E429F901AAD845A00DBE0C4 /* NavBar_menu_icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBar_menu_icon3.png; sourceTree = "<group>"; };
 		2EA905A41A75B88C00E50502 /* Doctors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Doctors.h; sourceTree = "<group>"; };
 		2EA905A51A75B88C00E50502 /* Doctors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Doctors.m; sourceTree = "<group>"; };
 		2EA905A71A75BDA300E50502 /* DoctorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorCell.h; sourceTree = "<group>"; };
@@ -133,11 +146,11 @@
 				2EBE7D421A65997F00D76DDA /* LoginViewController.h */,
 				2EBE7D431A65997F00D76DDA /* LoginViewController.m */,
 				2EBE7D451A65997F00D76DDA /* Main.storyboard */,
-				2ED3A4851AAC5B810062095A /* RegistrationViewController.h */,
-				2ED3A4861AAC5B810062095A /* RegistrationViewController.m */,
 				2EBF45581A7732CC001BA7A6 /* User.h */,
 				2EBF45591A7732CC001BA7A6 /* User.m */,
 				2EBF45521A76F7B0001BA7A6 /* BioViewController.h */,
+				2E429F851AAD1ECE00DBE0C4 /* RegistrationViewController.h */,
+				2E429F861AAD1ECE00DBE0C4 /* RegistrationViewController.m */,
 				2EBF45531A76F7B0001BA7A6 /* BioViewController.m */,
 				2E0966731A67A2B700FC1604 /* DoctorTableViewController.h */,
 				2E0966741A67A2B700FC1604 /* DoctorTableViewController.m */,
@@ -153,6 +166,11 @@
 		2EBE7D3B1A65997F00D76DDA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2E429F901AAD845A00DBE0C4 /* NavBar_menu_icon3.png */,
+				2E429F8E1AAD830400DBE0C4 /* NavBar_menu_icon2.png */,
+				2E429F8C1AAD743F00DBE0C4 /* NavBar_wordmark.png */,
+				2E429F8A1AAD743600DBE0C4 /* NavBar_search_icon.png */,
+				2E429F881AAD742B00DBE0C4 /* NavBar_menu_icon.png */,
 				2EBF45611A7762EF001BA7A6 /* page1.png */,
 				2EBF45621A7762EF001BA7A6 /* page2.png */,
 				2EBF45631A7762EF001BA7A6 /* page3.png */,
@@ -291,11 +309,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E429F8B1AAD743600DBE0C4 /* NavBar_search_icon.png in Resources */,
 				2EBE7D471A65997F00D76DDA /* Main.storyboard in Resources */,
+				2E429F891AAD742B00DBE0C4 /* NavBar_menu_icon.png in Resources */,
+				2E429F8D1AAD743F00DBE0C4 /* NavBar_wordmark.png in Resources */,
 				2EBE7D4C1A65997F00D76DDA /* LaunchScreen.xib in Resources */,
 				2EBF45661A7762EF001BA7A6 /* page3.png in Resources */,
+				2E429F911AAD845A00DBE0C4 /* NavBar_menu_icon3.png in Resources */,
 				2EBF45641A7762EF001BA7A6 /* page1.png in Resources */,
 				2EBE7D491A65997F00D76DDA /* Images.xcassets in Resources */,
+				2E429F8F1AAD830400DBE0C4 /* NavBar_menu_icon2.png in Resources */,
 				2EBF45651A7762EF001BA7A6 /* page2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,7 +339,6 @@
 			files = (
 				EAD599681AAC679A0015BE1C /* SidebarViewController.m in Sources */,
 				2E0966751A67A2B700FC1604 /* DoctorTableViewController.m in Sources */,
-				2ED3A4871AAC5B810062095A /* RegistrationViewController.m in Sources */,
 				2EBE7D441A65997F00D76DDA /* LoginViewController.m in Sources */,
 				2EBF455A1A7732CC001BA7A6 /* User.m in Sources */,
 				2EBF45571A7710CD001BA7A6 /* FormViewController.m in Sources */,
@@ -328,6 +350,7 @@
 				2EBF455F1A775EB1001BA7A6 /* TutorialPageContentViewController.m in Sources */,
 				2EBF45601A775EB1001BA7A6 /* TutorialViewController.m in Sources */,
 				EAD599651AAC63E70015BE1C /* SWRevealViewController.m in Sources */,
+				2E429F871AAD1ECE00DBE0C4 /* RegistrationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

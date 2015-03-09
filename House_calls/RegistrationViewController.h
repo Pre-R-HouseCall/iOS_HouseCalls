@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
-@interface RegistrationViewController : UIViewController
-
+@interface RegistrationViewController : UIViewController<NSURLConnectionDelegate>
+@property NSMutableData* responseData;
+@property (nonatomic, strong) NSMutableDictionary* jsonArray;
 @end
