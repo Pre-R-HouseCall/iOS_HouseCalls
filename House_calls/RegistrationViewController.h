@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Timothy Acorda. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import <UIKit/UIKit.h>
 
-@interface RegistrationViewController : NSViewController
+@interface RegistrationViewController : UIViewController
 
 @end
