@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-#define userCheckURL @"http://54.191.98.90/api/ios_connect/check.php"
+#define userCheckURL @"http://54.191.98.90/api/1.0/check/"
 
 @interface LoginViewController () 
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
@@ -19,8 +19,17 @@
 
 
 @implementation LoginViewController
+
 - (IBAction)pressedCheck:(id)sender {
     [self createConnection];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *id = [defaults objectForKey:@"ID"];
+    if ([id length]) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+    else {
+        self.handler.text = @"Invalid Email and Password combination";
+    }
     //self.handler.text = [[NSString alloc] initWithData:self.responseData encoding:NSASCIIStringEncoding];
 }
 - (IBAction)registrationPressed:(id)sender {
@@ -117,20 +126,15 @@
 
 -(void)createConnection {
     // Create the request.
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:userCheckURL]];
+    NSString *stringData = [NSString stringWithFormat: @"%@%@/%@",userCheckURL, self.userNameField.text, self.passwordField.text];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:stringData]];
     
     // Specify that it will be a POST request
-    request.HTTPMethod = @"POST";
+    //request.HTTPMethod = @"POST";
     
     // This is how we set header fields
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    
+    //[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     // Convert your data and set your request's HTTPBody property
-    NSString *stringData = [NSString stringWithFormat: @"Username=%@&Password=%@", self.userNameField.text, self.passwordField.text];
-    NSLog(@"%@", stringData);
-    NSData *requestBodyData = [stringData dataUsingEncoding:NSUTF8StringEncoding];
-    request.HTTPBody = requestBodyData;
-    
     // Create url connection and fire request
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     

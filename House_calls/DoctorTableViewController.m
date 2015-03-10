@@ -60,6 +60,7 @@
      [NSDictionary dictionaryWithObjectsAndKeys:
       [UIFont fontWithName:@"Avenir" size:30],
       NSFontAttributeName, [UIColor whiteColor], NSForegroundColorAttributeName, nil]];
+    self.selectedIndex = -1;
     
     [self retrieveData];
     
@@ -95,18 +96,66 @@
     if (tempdoc) {
         doctorCell.doctorName.text  = [tempdoc getFullName];
     }
+    if([tempdoc.docAvailable isEqualToString:@"Available"]) {
+        doctorCell.availImage.image = [UIImage imageNamed:@"indicator_available"];
+    } else {
+                doctorCell.availImage.image = [UIImage imageNamed:@"indicator_unavailable"];
+    }
+    doctorCell.descriptionLabel.text = tempdoc.docDescription;
+    doctorCell.seeButton.tag = indexPath.row;
     doctorCell.buttonToBio.tag = indexPath.row;
     doctorCell.buttonToForm.tag = indexPath.row;
     [doctorCell.buttonToForm addTarget:self action:@selector(formButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [doctorCell.seeButton addTarget:self action:@selector(bioButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [doctorCell.buttonToBio addTarget:self action:@selector(bioButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     return doctorCell;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(self.selectedIndex == indexPath.row) {
+        return 300;
+    } else {
+        return 75;
+    }
+    
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(self.selectedIndex == indexPath.row) {
+        self.selectedIndex = -1;
+        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        DoctorCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+        cell.buttonToBio.hidden = YES;
+        cell.buttonToForm.hidden = YES;
+        cell.seeButton.hidden = YES;
+        cell.descriptionLabel.hidden = YES;
+        return;
+        
+    } else if(self.selectedIndex != -1) {
+        NSIndexPath *prevpath = [NSIndexPath indexPathForRow:self.selectedIndex inSection:0];
+        self.selectedIndex = indexPath.row;
+        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:prevpath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        DoctorCell* cell = [tableView cellForRowAtIndexPath:prevpath];
+        cell.buttonToBio.hidden = YES;
+        cell.buttonToForm.hidden = YES;
+        cell.seeButton.hidden = YES;
+        cell.descriptionLabel.hidden = YES;
+        
+    }
+    self.selectedIndex = indexPath.row;
+    [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    DoctorCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.buttonToBio.hidden = NO;
+    cell.buttonToForm.hidden = NO;
+    cell.seeButton.hidden = NO;
+    cell.descriptionLabel.hidden = NO;
+}
+
 -(void) formButtonClicked:(UIButton*)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    
+
     if([defaults objectForKey:@"ID"] != NULL) {
         [self performSegueWithIdentifier:@"segueForm" sender: sender];
     }

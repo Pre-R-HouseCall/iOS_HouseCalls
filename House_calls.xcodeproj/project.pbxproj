@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2E0966751A67A2B700FC1604 /* DoctorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0966741A67A2B700FC1604 /* DoctorTableViewController.m */; };
+		2E1163301AAEEC2400D45186 /* Request_Dcotor.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E11632F1AAEEC2400D45186 /* Request_Dcotor.png */; };
+		2E1163321AAEEC2800D45186 /* Doctor_Profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E1163311AAEEC2800D45186 /* Doctor_Profile.png */; };
+		2E1163341AAEEC2E00D45186 /* indicator_available.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E1163331AAEEC2E00D45186 /* indicator_available.png */; };
+		2E1163361AAEEC3800D45186 /* indicator_unavailable.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E1163351AAEEC3800D45186 /* indicator_unavailable.png */; };
 		2E429F871AAD1ECE00DBE0C4 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E429F861AAD1ECE00DBE0C4 /* RegistrationViewController.m */; };
 		2E429F891AAD742B00DBE0C4 /* NavBar_menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E429F881AAD742B00DBE0C4 /* NavBar_menu_icon.png */; };
 		2E429F8B1AAD743600DBE0C4 /* NavBar_search_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E429F8A1AAD743600DBE0C4 /* NavBar_search_icon.png */; };
@@ -48,6 +52,10 @@
 /* Begin PBXFileReference section */
 		2E0966731A67A2B700FC1604 /* DoctorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorTableViewController.h; sourceTree = "<group>"; };
 		2E0966741A67A2B700FC1604 /* DoctorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorTableViewController.m; sourceTree = "<group>"; };
+		2E11632F1AAEEC2400D45186 /* Request_Dcotor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Request_Dcotor.png; sourceTree = "<group>"; };
+		2E1163311AAEEC2800D45186 /* Doctor_Profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Doctor_Profile.png; sourceTree = "<group>"; };
+		2E1163331AAEEC2E00D45186 /* indicator_available.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = indicator_available.png; sourceTree = "<group>"; };
+		2E1163351AAEEC3800D45186 /* indicator_unavailable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = indicator_unavailable.png; sourceTree = "<group>"; };
 		2E429F851AAD1ECE00DBE0C4 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
 		2E429F861AAD1ECE00DBE0C4 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 		2E429F881AAD742B00DBE0C4 /* NavBar_menu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBar_menu_icon.png; sourceTree = "<group>"; };
@@ -166,6 +174,10 @@
 		2EBE7D3B1A65997F00D76DDA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2E1163351AAEEC3800D45186 /* indicator_unavailable.png */,
+				2E1163331AAEEC2E00D45186 /* indicator_available.png */,
+				2E1163311AAEEC2800D45186 /* Doctor_Profile.png */,
+				2E11632F1AAEEC2400D45186 /* Request_Dcotor.png */,
 				2E429F901AAD845A00DBE0C4 /* NavBar_menu_icon3.png */,
 				2E429F8E1AAD830400DBE0C4 /* NavBar_menu_icon2.png */,
 				2E429F8C1AAD743F00DBE0C4 /* NavBar_wordmark.png */,
@@ -310,15 +322,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E429F8B1AAD743600DBE0C4 /* NavBar_search_icon.png in Resources */,
+				2E1163361AAEEC3800D45186 /* indicator_unavailable.png in Resources */,
 				2EBE7D471A65997F00D76DDA /* Main.storyboard in Resources */,
 				2E429F891AAD742B00DBE0C4 /* NavBar_menu_icon.png in Resources */,
 				2E429F8D1AAD743F00DBE0C4 /* NavBar_wordmark.png in Resources */,
+				2E1163301AAEEC2400D45186 /* Request_Dcotor.png in Resources */,
 				2EBE7D4C1A65997F00D76DDA /* LaunchScreen.xib in Resources */,
 				2EBF45661A7762EF001BA7A6 /* page3.png in Resources */,
 				2E429F911AAD845A00DBE0C4 /* NavBar_menu_icon3.png in Resources */,
 				2EBF45641A7762EF001BA7A6 /* page1.png in Resources */,
 				2EBE7D491A65997F00D76DDA /* Images.xcassets in Resources */,
 				2E429F8F1AAD830400DBE0C4 /* NavBar_menu_icon2.png in Resources */,
+				2E1163341AAEEC2E00D45186 /* indicator_available.png in Resources */,
+				2E1163321AAEEC2800D45186 /* Doctor_Profile.png in Resources */,
 				2EBF45651A7762EF001BA7A6 /* page2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

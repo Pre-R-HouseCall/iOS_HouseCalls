@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WOx-vN-4pG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WOx-vN-4pG">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -146,17 +146,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" alpha="0.74999999999999978" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTL-E4-j79">
-                                <rect key="frame" x="60" y="347" width="127" height="64"/>
-                                <color key="backgroundColor" red="0.62307257400000005" green="0.84796463820000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="gtc-1u-5nv" kind="unwind" identifier="loggedIn" unwindAction="unwindToList:" id="i4u-ZU-eiD"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" alpha="0.74999999999999978" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBf-iW-9gH">
                                 <rect key="frame" x="195" y="347" width="119" height="64"/>
                                 <color key="backgroundColor" red="0.62352941176470589" green="0.84705882352941175" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -182,7 +171,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhL-Xh-ZbU">
-                                <rect key="frame" x="164" y="284" width="46" height="50"/>
+                                <rect key="frame" x="47" y="347" width="140" height="63"/>
                                 <color key="backgroundColor" red="0.62307257400000005" green="0.84796463820000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -197,14 +186,12 @@
                     <navigationItem key="navigationItem" title="Login Screen" id="1Pf-pd-tOJ"/>
                     <connections>
                         <outlet property="handler" destination="kUC-xw-rWC" id="evJ-YT-Kfo"/>
-                        <outlet property="loginButton" destination="gTL-E4-j79" id="ITT-zo-Lqz"/>
                         <outlet property="passwordField" destination="rLy-nV-m60" id="C64-49-TE6"/>
                         <outlet property="userNameField" destination="aGV-1t-9CX" id="d53-cy-ksk"/>
                         <segue destination="thP-XR-EfA" kind="show" identifier="segueRegistration" id="B4N-1I-QyH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6yX-CJ-nBH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="gtc-1u-5nv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1282.5" y="424.5"/>
         </scene>
@@ -365,46 +352,61 @@
         <!--Pre-R-->
         <scene sceneID="eH3-Kc-1KJ">
             <objects>
-                <tableViewController id="ryc-Ua-VwO" customClass="DoctorTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="homepage" id="ryc-Ua-VwO" customClass="DoctorTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" id="ZCV-XQ-kTk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="doctorCell" id="sbg-DG-jfT" customClass="DoctorCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="doctorCell" rowHeight="300" id="sbg-DG-jfT" customClass="DoctorCell">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sbg-DG-jfT" id="tWW-ZQ-aon">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ed4-Td-nRJ">
-                                            <rect key="frame" x="321" y="54" width="46" height="30"/>
-                                            <state key="normal" title="form">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HLH-z6-1si">
-                                            <rect key="frame" x="0.0" y="8" width="105" height="74"/>
-                                        </imageView>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJr-Yi-Tcr">
-                                            <rect key="frame" x="321" y="8" width="46" height="30"/>
-                                            <state key="normal" title="Bio">
+                                        <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJr-Yi-Tcr">
+                                            <rect key="frame" x="247" y="64" width="100" height="100"/>
+                                            <state key="normal" title="Bio" image="Doctor_Profile.png">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUA-4D-fIY">
-                                            <rect key="frame" x="113" y="31" width="185" height="28"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <rect key="frame" x="56" y="8" width="291" height="28"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ed4-Td-nRJ">
+                                            <rect key="frame" x="247" y="172" width="100" height="100"/>
+                                            <state key="normal" title="form" image="Request_Dcotor.png">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gte-jS-R0I">
+                                            <rect key="frame" x="18" y="24" width="14" height="14"/>
+                                        </imageView>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iE-RR-fia">
+                                            <rect key="frame" x="56" y="88" width="183" height="128"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPQ-FH-4Ev">
+                                            <rect key="frame" x="48" y="207" width="71" height="30"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                                            <state key="normal" title="See More">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="availImage" destination="Gte-jS-R0I" id="Oig-eZ-PE7"/>
                                     <outlet property="buttonToBio" destination="bJr-Yi-Tcr" id="ao0-0v-Kaa"/>
                                     <outlet property="buttonToForm" destination="ed4-Td-nRJ" id="COH-L9-ZCs"/>
-                                    <outlet property="doctorImage" destination="HLH-z6-1si" id="DdG-Fa-PwT"/>
+                                    <outlet property="descriptionLabel" destination="7iE-RR-fia" id="boo-bx-qk3"/>
                                     <outlet property="doctorName" destination="fUA-4D-fIY" id="06l-1o-Du8"/>
+                                    <outlet property="seeButton" destination="tPQ-FH-4Ev" id="G2H-AK-E5x"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -427,7 +429,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A5N-bA-nFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="507" y="536"/>
+            <point key="canvasLocation" x="506.5" y="524.5"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="N9U-gy-8I0">
@@ -519,7 +521,7 @@
         <!--Reveal View Controller-->
         <scene sceneID="KI1-h1-Nw5">
             <objects>
-                <viewController title="Reveal View Controller" id="g4t-4F-7De" customClass="SWRevealViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homepagecontroller" title="Reveal View Controller" id="g4t-4F-7De" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QZw-vK-AI6"/>
                         <viewControllerLayoutGuide type="bottom" id="h0r-5P-VRp"/>
@@ -606,6 +608,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Doctor_Profile.png" width="1035" height="1035"/>
         <image name="NavBar_menu_icon2.png" width="41" height="36"/>
+        <image name="Request_Dcotor.png" width="1037" height="1037"/>
     </resources>
 </document>
