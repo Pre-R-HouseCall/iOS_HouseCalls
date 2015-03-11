@@ -18,6 +18,11 @@
 		2E429F8D1AAD743F00DBE0C4 /* NavBar_wordmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E429F8C1AAD743F00DBE0C4 /* NavBar_wordmark.png */; };
 		2E429F8F1AAD830400DBE0C4 /* NavBar_menu_icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E429F8E1AAD830400DBE0C4 /* NavBar_menu_icon2.png */; };
 		2E429F911AAD845A00DBE0C4 /* NavBar_menu_icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E429F901AAD845A00DBE0C4 /* NavBar_menu_icon3.png */; };
+		2E7F723D1AB02FBA0040A663 /* form_checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E7F723C1AB02FBA0040A663 /* form_checkbox.png */; };
+		2E7F723F1AB03B910040A663 /* submitted_checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E7F723E1AB03B910040A663 /* submitted_checkmark.png */; };
+		2E7F72411AB03CE60040A663 /* submitted_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E7F72401AB03CE60040A663 /* submitted_back.png */; };
+		2E7F72431AB03E340040A663 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E7F72421AB03E340040A663 /* CoreLocation.framework */; };
+		2E7F72451AB043920040A663 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E7F72441AB043920040A663 /* MapKit.framework */; };
 		2EA905A61A75B88C00E50502 /* Doctors.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA905A51A75B88C00E50502 /* Doctors.m */; };
 		2EA905A91A75BDA300E50502 /* DoctorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA905A81A75BDA300E50502 /* DoctorCell.m */; };
 		2EBE7D3E1A65997F00D76DDA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBE7D3D1A65997F00D76DDA /* main.m */; };
@@ -63,6 +68,11 @@
 		2E429F8C1AAD743F00DBE0C4 /* NavBar_wordmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBar_wordmark.png; sourceTree = "<group>"; };
 		2E429F8E1AAD830400DBE0C4 /* NavBar_menu_icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBar_menu_icon2.png; sourceTree = "<group>"; };
 		2E429F901AAD845A00DBE0C4 /* NavBar_menu_icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBar_menu_icon3.png; sourceTree = "<group>"; };
+		2E7F723C1AB02FBA0040A663 /* form_checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = form_checkbox.png; sourceTree = "<group>"; };
+		2E7F723E1AB03B910040A663 /* submitted_checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = submitted_checkmark.png; sourceTree = "<group>"; };
+		2E7F72401AB03CE60040A663 /* submitted_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = submitted_back.png; sourceTree = "<group>"; };
+		2E7F72421AB03E340040A663 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2E7F72441AB043920040A663 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2EA905A41A75B88C00E50502 /* Doctors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Doctors.h; sourceTree = "<group>"; };
 		2EA905A51A75B88C00E50502 /* Doctors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Doctors.m; sourceTree = "<group>"; };
 		2EA905A71A75BDA300E50502 /* DoctorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorCell.h; sourceTree = "<group>"; };
@@ -105,6 +115,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E7F72451AB043920040A663 /* MapKit.framework in Frameworks */,
+				2E7F72431AB03E340040A663 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +133,8 @@
 		2EBE7D2F1A65997F00D76DDA = {
 			isa = PBXGroup;
 			children = (
+				2E7F72441AB043920040A663 /* MapKit.framework */,
+				2E7F72421AB03E340040A663 /* CoreLocation.framework */,
 				2EBE7D3A1A65997F00D76DDA /* House_calls */,
 				2EBE7D541A65998000D76DDA /* House_callsTests */,
 				2EBE7D391A65997F00D76DDA /* Products */,
@@ -174,6 +188,9 @@
 		2EBE7D3B1A65997F00D76DDA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2E7F72401AB03CE60040A663 /* submitted_back.png */,
+				2E7F723E1AB03B910040A663 /* submitted_checkmark.png */,
+				2E7F723C1AB02FBA0040A663 /* form_checkbox.png */,
 				2E1163351AAEEC3800D45186 /* indicator_unavailable.png */,
 				2E1163331AAEEC2E00D45186 /* indicator_available.png */,
 				2E1163311AAEEC2800D45186 /* Doctor_Profile.png */,
@@ -325,9 +342,11 @@
 				2E1163361AAEEC3800D45186 /* indicator_unavailable.png in Resources */,
 				2EBE7D471A65997F00D76DDA /* Main.storyboard in Resources */,
 				2E429F891AAD742B00DBE0C4 /* NavBar_menu_icon.png in Resources */,
+				2E7F72411AB03CE60040A663 /* submitted_back.png in Resources */,
 				2E429F8D1AAD743F00DBE0C4 /* NavBar_wordmark.png in Resources */,
 				2E1163301AAEEC2400D45186 /* Request_Dcotor.png in Resources */,
 				2EBE7D4C1A65997F00D76DDA /* LaunchScreen.xib in Resources */,
+				2E7F723F1AB03B910040A663 /* submitted_checkmark.png in Resources */,
 				2EBF45661A7762EF001BA7A6 /* page3.png in Resources */,
 				2E429F911AAD845A00DBE0C4 /* NavBar_menu_icon3.png in Resources */,
 				2EBF45641A7762EF001BA7A6 /* page1.png in Resources */,
@@ -335,6 +354,7 @@
 				2E429F8F1AAD830400DBE0C4 /* NavBar_menu_icon2.png in Resources */,
 				2E1163341AAEEC2E00D45186 /* indicator_available.png in Resources */,
 				2E1163321AAEEC2800D45186 /* Doctor_Profile.png in Resources */,
+				2E7F723D1AB02FBA0040A663 /* form_checkbox.png in Resources */,
 				2EBF45651A7762EF001BA7A6 /* page2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
