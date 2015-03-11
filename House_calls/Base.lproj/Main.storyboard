@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WOx-vN-4pG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WOx-vN-4pG">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -453,11 +453,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0r-Wd-yPj">
-                                <rect key="frame" x="0.0" y="489" width="375" height="111"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0r-Wd-yPj">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
                                 <color key="backgroundColor" red="0.52156862749999999" green="0.66666666669999997" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <color key="tintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Skip">
+                                <state key="normal" title="Skip" backgroundImage="Skip_no-text.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -467,9 +468,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aSa-GL-abq" firstAttribute="top" secondItem="w0r-Wd-yPj" secondAttribute="bottom" id="7t7-cV-iCg"/>
+                            <constraint firstItem="aSa-GL-abq" firstAttribute="bottom" secondItem="w0r-Wd-yPj" secondAttribute="bottom" id="7t7-cV-iCg"/>
                             <constraint firstItem="w0r-Wd-yPj" firstAttribute="leading" secondItem="fWe-SM-hTQ" secondAttribute="leadingMargin" constant="-16" id="TEk-iP-9TZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="w0r-Wd-yPj" secondAttribute="trailing" constant="-16" id="v2t-mW-RRo"/>
+                            <constraint firstItem="w0r-Wd-yPj" firstAttribute="top" secondItem="TCL-j2-YeG" secondAttribute="bottom" constant="598" id="zgS-m7-oC8"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -497,7 +499,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oMZ-eR-pJm">
-                                <rect key="frame" x="-6" y="0.0" width="606" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="672"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -611,5 +613,6 @@
         <image name="Doctor_Profile.png" width="1035" height="1035"/>
         <image name="NavBar_menu_icon2.png" width="41" height="36"/>
         <image name="Request_Dcotor.png" width="1037" height="1037"/>
+        <image name="Skip_no-text.png" width="2936" height="374"/>
     </resources>
 </document>
