@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *statusText;
 @property (weak, nonatomic) IBOutlet UILabel *bioText;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
+@property (weak, nonatomic) IBOutlet UILabel *doctorName;
 
 @end
 
@@ -43,6 +44,7 @@
     self.bioText.text = self.doc.docDescription;
     self.navItem.title = [self.doc getFullName];
     self.statusText.text = self.doc.docAvailable;
+    self.doctorName.text = [NSString stringWithFormat:@"%@ %@", self.doc.docFirstname, self.doc.docLastname];
 }
 
 
