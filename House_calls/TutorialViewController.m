@@ -17,8 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    _pageTitles = @[@"House Calls", @"Medical Advice", @"Active Community"]; //, @"Free Regular Update"
-    _pageImages = @[@"page1.png", @"page2.png", @"page3.png"];  //, @"page4.png"
+    _pageTitles = @[@"", @"", @"", @""]; //, @"Free Regular Update"
+    _pageImages = @[@"Tutorial_1.png", @"Tutorial_2.png", @"Tutorial_3.png", @"Tutorial_4.png"];  //, @"page4.png"
     
     // Create page view controller
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"TutorialPageViewController"];
