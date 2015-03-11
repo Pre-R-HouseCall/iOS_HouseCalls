@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WOx-vN-4pG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WOx-vN-4pG">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -137,6 +137,9 @@
                                 <state key="normal" title="Submit" backgroundImage="submitted_back.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="4dN-tG-3oE" eventType="touchUpInside" id="Zes-L4-BMs"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -305,7 +308,33 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6yX-CJ-nBH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1282.5" y="424.5"/>
+            <point key="canvasLocation" x="1588.5" y="412.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xul-Yx-i6q">
+            <objects>
+                <viewController id="BH8-D7-K6G" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DKK-Ri-6fl"/>
+                        <viewControllerLayoutGuide type="bottom" id="Oru-gS-31o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7dC-P1-tAy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Waiting room" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRt-3A-9BW">
+                                <rect key="frame" x="136" y="87" width="102" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1uO-aQ-qjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1046" y="1050"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="Xcm-h1-pgO">
@@ -459,7 +488,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zjh-mm-61T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1282.5" y="1198.5"/>
+            <point key="canvasLocation" x="1588.5" y="1234.5"/>
         </scene>
         <!--Pre-R-->
         <scene sceneID="eH3-Kc-1KJ">
@@ -537,6 +566,7 @@
                         <segue destination="4dN-tG-3oE" kind="show" identifier="segueForm" id="Py7-KW-jQ3"/>
                         <segue destination="TLS-dt-CG2" kind="show" identifier="segueBio" id="rpj-hj-GLb"/>
                         <segue destination="fEj-nc-qsf" kind="show" identifier="segueLogin" id="5ik-kU-WLm"/>
+                        <segue destination="BH8-D7-K6G" kind="show" identifier="waitingRoom" id="cch-bz-G5x"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A5N-bA-nFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -759,7 +789,11 @@
         <image name="Doctor_Profile.png" width="1035" height="1035"/>
         <image name="NavBar_menu_icon2.png" width="41" height="36"/>
         <image name="Request_Dcotor.png" width="1037" height="1037"/>
+        <image name="Skip_no-text.png" width="2936" height="374"/>
         <image name="form_checkbox.png" width="51" height="49"/>
+        <image name="login_orangebox.png" width="588" height="102"/>
+        <image name="menu_divider.png" width="292" height="14"/>
+        <image name="menu_usericon" width="155" height="153"/>
         <image name="submitted_back.png" width="392" height="104"/>
         <image name="submitted_checkmark.png" width="301" height="201"/>
     </resources>

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SidebarViewController : UIViewController
+@interface SidebarViewController : UIViewController <NSURLConnectionDelegate>
+
 
 @end

@@ -44,6 +44,10 @@
     }
     return _user;
 }
+-(void)reload2 {
+    
+    
+}
 - (void)viewDidLoad {
     [self user];
     [super viewDidLoad];
@@ -51,9 +55,10 @@
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
     {
-        [self.sidebarButton setTarget: self.revealViewController];
         [self.sidebarButton setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+        [revealViewController viewDidLoad];
+
     }
     
     [self.navigationController.navigationBar setTitleTextAttributes:
@@ -61,7 +66,12 @@
       [UIFont fontWithName:@"Avenir" size:30],
       NSFontAttributeName, [UIColor whiteColor], NSForegroundColorAttributeName, nil]];
     self.selectedIndex = -1;
-    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UIColor orangeColor];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self
+                            action:@selector(retrieveData)
+                  forControlEvents:UIControlEventValueChanged];
     [self retrieveData];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -156,8 +166,11 @@
 -(void) formButtonClicked:(UIButton*)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
-    if([defaults objectForKey:@"ID"] != NULL) {
+    if([defaults objectForKey:@"ID"] != NULL && ![defaults integerForKey:@"FormActive"]) {
         [self performSegueWithIdentifier:@"segueForm" sender: sender];
+    }
+    if([defaults integerForKey:@"FormActive"]) {
+        [self performSegueWithIdentifier:@"waitingRoom" sender:self];
     }
     else {
         [self performSegueWithIdentifier:@"segueLogin" sender:sender];
@@ -258,7 +271,9 @@
         [self.doctorArray addObject:[[Doctors alloc] initWithDoctorName: dID andUsername:dUsername andFirstname:dFirstname andLastname:dLastname andAvailablity:dAvailable andDistance:dDistance andImage:dImage andDesc:dDescription]];
         
     }
-    
+    if (self.refreshControl) {
+        [self.refreshControl endRefreshing];
+    }
     [self.tableView reloadData];
     
     

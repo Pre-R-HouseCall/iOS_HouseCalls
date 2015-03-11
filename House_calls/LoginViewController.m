@@ -30,7 +30,6 @@
     else {
         self.handler.text = @"Invalid Email and Password combination";
     }
-    //self.handler.text = [[NSString alloc] initWithData:self.responseData encoding:NSASCIIStringEncoding];
 }
 - (IBAction)registrationPressed:(id)sender {
     [self performSegueWithIdentifier:@"segueRegistration" sender:sender];
@@ -39,6 +38,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+}
+
+-(void)dismissKeyboard {
+    [self.view endEditing:YES];
 }
 
 -(User*)user {
@@ -84,11 +91,11 @@
     NSLog(@"Entered this function");
     [_responseData appendData:data];
     NSString* output = [[NSString alloc] initWithData:self.responseData encoding:NSASCIIStringEncoding];
+    self.jsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+
     if([output isEqualToString:@"No Such User Found"]) {
-        self.handler.text = @"User does not exist!";
-    } else {
-        self.jsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-        
+        return;
+    } else if([self.jsonArray count]) {
         NSLog(@"%lu\n", (unsigned long)[self.jsonArray count]);
         NSString* ID = [self.jsonArray objectForKey:@"UserId"];
         NSString * Firstname = [self.jsonArray objectForKey:@"FirstName"];

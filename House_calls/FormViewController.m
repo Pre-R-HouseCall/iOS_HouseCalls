@@ -80,6 +80,15 @@
     self.symptomstextField.layer.borderWidth = 0.01;
     self.symptomstextField.backgroundColor = [UIColor colorWithRed:220.0f/255.0f green:220.0f/255.0f blue:220.0f/255.0f alpha:1.0];
     // Do any additional setup after loading the view.
+
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+}
+
+-(void)dismissKeyboard {
+    [self.view endEditing:YES];
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
@@ -130,6 +139,17 @@
 }
 - (IBAction)backButtonPressed:(id)sender {
     [[self navigationController] popViewControllerAnimated:YES];
+}
+
+- (IBAction)submitButtonPressed:(id)sender {
+    //need to handle for in accurate inputs/incomplete form
+    //conditional form sending
+    //if(fields lengths  == 0){
+        //rewrite labels to appear in red or state required
+    //else {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:1 forKey:@"FormActive"];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 /*
