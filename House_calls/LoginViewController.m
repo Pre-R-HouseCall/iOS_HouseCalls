@@ -111,6 +111,7 @@
         [defaults setObject:Phonenumber forKey:@"Phonenumber"];
         [defaults synchronize];
         self.handler.text = @"Successful login!";
+        [self.navigationController popToRootViewControllerAnimated:YES];
     }
 }
 

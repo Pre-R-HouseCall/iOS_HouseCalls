@@ -169,7 +169,7 @@
     if([defaults objectForKey:@"ID"] != NULL && ![defaults integerForKey:@"FormActive"]) {
         [self performSegueWithIdentifier:@"segueForm" sender: sender];
     }
-    if([defaults integerForKey:@"FormActive"]) {
+    else if([defaults integerForKey:@"FormActive"]) {
         [self performSegueWithIdentifier:@"waitingRoom" sender:self];
     }
     else {

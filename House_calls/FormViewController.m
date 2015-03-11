@@ -147,6 +147,11 @@
     //if(fields lengths  == 0){
         //rewrite labels to appear in red or state required
     //else {
+    NSDate *date=[NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat: @"yyyy-MM-dd HH:mm:ss"];
+    NSString *sqlDate = [dateFormatter stringFromDate: date];
+    NSLog(@"%@\n", sqlDate);
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setInteger:1 forKey:@"FormActive"];
     [self.navigationController popToRootViewControllerAnimated:YES];
