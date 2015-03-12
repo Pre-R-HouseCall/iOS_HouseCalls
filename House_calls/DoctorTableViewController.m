@@ -105,6 +105,7 @@
    
     if (tempdoc) {
         doctorCell.doctorName.text  = [tempdoc getFullName];
+        doctorCell.doctorDistance.text = tempdoc.docDistance;
     }
     if([tempdoc.docAvailable isEqualToString:@"Available"]) {
         doctorCell.availImage.image = [UIImage imageNamed:@"indicator_available"];
