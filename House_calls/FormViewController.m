@@ -10,6 +10,8 @@
 #import "DoctorTableViewController.h"
 #import <MapKit/MapKit.h>
 
+#define sendformURL @"http://54.191.98.90/api/1.0/addForm/"
+
 @interface FormViewController ()
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
 @property (strong, nonatomic) IBOutlet UITextField *firstNameTextField;
@@ -27,6 +29,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *checkedImage;
 @property (strong, nonatomic) IBOutlet MKMapView *mapview;
 @property BOOL pressed;
+@property NSInteger lat;
+@property NSInteger longitude;
 @end
 
 @implementation FormViewController
@@ -114,6 +118,8 @@
         [self.locationManager startUpdatingLocation];
         self.mapview.hidden = NO;
         CLLocationCoordinate2D coordinate = self.locationManager.location.coordinate;
+        self.lat = self.locationManager.location.coordinate.latitude;
+        self.longitude = self.locationManager.location.coordinate.longitude;
         MKCoordinateRegion extentsRegion = MKCoordinateRegionMakeWithDistance(coordinate, 800, 800);
         [self.mapview setRegion:extentsRegion animated:YES];
         MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
@@ -142,20 +148,33 @@
 }
 
 - (IBAction)submitButtonPressed:(id)sender {
-    //need to handle for in accurate inputs/incomplete form
-    //conditional form sending
-    //if(fields lengths  == 0){
-        //rewrite labels to appear in red or state required
-    //else {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *id = [defaults objectForKey:@"ID"];
     NSDate *date=[NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat: @"yyyy-MM-dd HH:mm:ss"];
+    [dateFormatter setDateFormat: @"yyyy-MM-dd%20HH:mm:ss"];
     NSString *sqlDate = [dateFormatter stringFromDate: date];
     NSLog(@"%@\n", sqlDate);
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:1 forKey:@"FormActive"];
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    NSString *newURL;
+    if([self.firstNameTextField hasText] && [self.lastNameTextField hasText] && [self.emailAddressField hasText] ){
+        if(self.pressed) {
+            
+            newURL = [NSString stringWithFormat:@"%@%@/%@/%@/%@/%@/%@/%@/%f/%f/NULL/NULL/NULL/%@", sendformURL, self.doc.docID, id, self.firstNameTextField.text, self.lastNameTextField.text, self.emailAddressField.text, self.phoneNumberTextField.text, self.symptomstextField.text, (double)self.lat, (double)self.longitude, sqlDate];
+            NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:newURL]];
+            NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+            NSLog(@"%@\n", newURL);
+        } else {
+        newURL = [NSString stringWithFormat:@"%@%@/%@/%@/%@/%@/%@/%@/NULL/NULL/%@/%@/%@/%@", sendformURL, self.doc.docID, id, self.firstNameTextField.text, self.lastNameTextField.text, self.emailAddressField.text, self.phoneNumberTextField.text, self.symptomstextField.text, self.streetAddressTextField.text, self.cityTextField.text, self.stateTextField.text, sqlDate];
+        NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:newURL]];
+        NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        NSLog(@"%@\n", newURL);
+     }
+        //[defaults setInteger:1 forKey:@"FormActive"];
+    //[self.navigationController popToRootViewControllerAnimated:YES];
+    }
+    
 }
+       
 
 /*
 #pragma mark - Navigation

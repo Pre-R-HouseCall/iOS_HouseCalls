@@ -165,7 +165,7 @@
 -(void)createConnection {
     if([self.NameTextField hasText] && [self.EmailTextField hasText] && [self.PasswordTextField hasText] && [self.PhoneNumberTextField hasText]) {
         
-        NSString *newURL = [NSString stringWithFormat:@"%@%@/%@/%@/%@/%@/NULL/NULL/NULL/NULL", sendformURL, self.NameTextField.text, self.LastNameTextField.text , self.EmailTextField.text, self.PasswordTextField.text, self.PhoneNumberTextField.text];
+        NSString *newURL = [NSString stringWithFormat:@"%@%@/%@/%@/%@/%@/%@/%@/%@/%@", sendformURL, self.NameTextField.text, self.LastNameTextField.text , self.EmailTextField.text, self.PasswordTextField.text, self.PhoneNumberTextField.text, self.AddressTextField.text, self.CityTextField.text, self.StateTextField.text, self.ZipTextField.text ];
         
         NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:newURL]];
         
