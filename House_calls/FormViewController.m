@@ -169,8 +169,8 @@
         NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
         NSLog(@"%@\n", newURL);
      }
-        //[defaults setInteger:1 forKey:@"FormActive"];
-    //[self.navigationController popToRootViewControllerAnimated:YES];
+    [defaults setInteger:1 forKey:@"FormActive"];
+    [self.navigationController popToRootViewControllerAnimated:YES];
     }
     
 }
