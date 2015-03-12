@@ -38,62 +38,48 @@
     
     [super viewDidLoad];
     
-    self.LastNameTextField.layer.borderColor = [[UIColor colorWithRed:191.0f/255.0f green:49.0f/255.0f blue:58.0f/255.0f alpha:1.0] CGColor];
-    self.LastNameTextField.layer.borderWidth = 1.0;
+    self.LastNameTextField.layer.borderWidth = 0.1;
     self.LastNameTextField.layer.cornerRadius = 8.0;
     self.LastNameTextField.clipsToBounds = YES;
     [self.LastNameTextField.layer setMasksToBounds:YES];
     
-   self.NameTextField.layer.borderColor = [[UIColor colorWithRed:191.0f/255.0f green:49.0f/255.0f blue:58.0f/255.0f alpha:1.0] CGColor];
-   self.NameTextField.layer.borderWidth = 1.0;
+   self.NameTextField.layer.borderWidth = 0.01;
    self.NameTextField.layer.cornerRadius = 8.0;
    self.NameTextField.clipsToBounds = YES;
    [self.NameTextField.layer setMasksToBounds:YES];
     
-    self.EmailTextField.layer.borderColor = [[UIColor colorWithRed:191.0f/255.0f green:49.0f/255.0f blue:58.0f/255.0f alpha:1.0] CGColor];
-    self.EmailTextField.layer.borderWidth = 1.0;
+    self.EmailTextField.layer.borderWidth = 0.01;
     self.EmailTextField.layer.cornerRadius = 8.0;
     self.EmailTextField.clipsToBounds = YES;
     [self.EmailTextField.layer setMasksToBounds:YES];
 
-    
-    self.PasswordTextField.layer.borderColor = [[UIColor colorWithRed:191.0f/255.0f green:49.0f/255.0f blue:58.0f/255.0f alpha:1.0] CGColor];
-    self.PasswordTextField.layer.borderWidth = 1.0;
+    self.PasswordTextField.layer.borderWidth = 0.01;
     self.PasswordTextField.layer.cornerRadius = 8.0;
     self.PasswordTextField.clipsToBounds = YES;
     [self.PasswordTextField.layer setMasksToBounds:YES];
 
-    
-    self.PhoneNumberTextField.layer.borderColor = [[UIColor colorWithRed:191.0f/255.0f green:49.0f/255.0f blue:58.0f/255.0f alpha:1.0] CGColor];
-    self.PhoneNumberTextField.layer.borderWidth = 1.0;
+    self.PhoneNumberTextField.layer.borderWidth = 0.01;
     self.PhoneNumberTextField.layer.cornerRadius = 8.0;
     self.PhoneNumberTextField.clipsToBounds = YES;
     [self.PhoneNumberTextField.layer setMasksToBounds:YES];
 
-    
-    self.AddressTextField.layer.borderColor = [[UIColor colorWithRed:191.0f/255.0f green:49.0f/255.0f blue:58.0f/255.0f alpha:1.0] CGColor];
-    self.AddressTextField.layer.borderWidth = 1.0;
+
+    self.AddressTextField.layer.borderWidth = 0.01;
     self.AddressTextField.layer.cornerRadius = 8.0;
     self.AddressTextField.clipsToBounds = YES;
     [self.AddressTextField.layer setMasksToBounds:YES];
 
-    
-    self.CityTextField.layer.borderColor = [[UIColor colorWithRed:191.0f/255.0f green:49.0f/255.0f blue:58.0f/255.0f alpha:1.0] CGColor];
-    self.CityTextField.layer.borderWidth = 1.0;
+    self.CityTextField.layer.borderWidth = 0.01;
     self.CityTextField.layer.cornerRadius = 8.0;
     self.CityTextField.clipsToBounds = YES;
     [self.CityTextField.layer setMasksToBounds:YES];
 
-    
-    self.StateTextField.layer.borderColor = [[UIColor colorWithRed:191.0f/255.0f green:49.0f/255.0f blue:58.0f/255.0f alpha:1.0] CGColor];
-    self.StateTextField.layer.borderWidth = 1.0;
+    self.StateTextField.layer.borderWidth = 0.01;
     self.StateTextField.layer.cornerRadius = 8.0;
     self.StateTextField.clipsToBounds = YES;
     [self.StateTextField.layer setMasksToBounds:YES];
 
-    
-    self.ZipTextField.layer.borderColor = [[UIColor colorWithRed:191.0f/255.0f green:49.0f/255.0f blue:58.0f/255.0f alpha:1.0] CGColor];
-    self.ZipTextField.layer.borderWidth = 1.0;
+    self.ZipTextField.layer.borderWidth = 0.01;
     self.ZipTextField.layer.cornerRadius = 8.0;
     self.ZipTextField.clipsToBounds = YES;
     [self.ZipTextField.layer setMasksToBounds:YES];
