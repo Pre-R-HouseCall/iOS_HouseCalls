@@ -11,6 +11,7 @@
 @interface SidebarViewController()
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 @property UIRefreshControl* refreshControl;
+@property (weak, nonatomic) IBOutlet UIButton *signInOut;
 @end
 
 @implementation SidebarViewController
@@ -25,10 +26,11 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     if([defaults objectForKey:@"ID"] != NULL) {
-        NSLog(@"Reached if");
         self.userName.text = [NSString stringWithFormat:@"%@ %@", [defaults objectForKey:@"Firstname"], [defaults objectForKey:@"Lastname"]];
+        [self.signInOut setTitle:@"Sign Out" forState:UIControlStateNormal];
     } else {
         self.userName.text = @"Not Logged In";
+        [self.signInOut setTitle:@"Sign In" forState:UIControlStateNormal];
     }
 
 }
