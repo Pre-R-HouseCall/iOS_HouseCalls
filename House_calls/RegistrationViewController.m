@@ -8,7 +8,7 @@
 
 #import "RegistrationViewController.h"
 
-#define sendformURL @"http://54.191.98.90/api/1.0/addUser/"
+#define sendformURL @"http://54.191.98.90/api/1.0/addUser"
 @interface RegistrationViewController ()
 @property (strong, nonatomic, retain) IBOutlet UITextField *NameTextField;
 @property (strong, nonatomic, retain) IBOutlet UITextField *EmailTextField;
@@ -21,7 +21,6 @@
 @property (strong, nonatomic, retain) IBOutlet UIButton *HIPPAButton;
 @property (strong, nonatomic) IBOutlet UIButton *SubmitButton;
 @property (strong, nonatomic) IBOutlet UILabel *emailLabel;
-@property (strong, nonatomic) IBOutlet UITextField *LastNameTextField;
 @end
 
 
@@ -37,11 +36,6 @@
 -(void)viewDidLoad {
     
     [super viewDidLoad];
-    
-    self.LastNameTextField.layer.borderWidth = 0.1;
-    self.LastNameTextField.layer.cornerRadius = 8.0;
-    self.LastNameTextField.clipsToBounds = YES;
-    [self.LastNameTextField.layer setMasksToBounds:YES];
     
    self.NameTextField.layer.borderWidth = 0.01;
    self.NameTextField.layer.cornerRadius = 8.0;
@@ -112,14 +106,13 @@
     [_responseData appendData:data];
     NSString * output = [[NSString alloc] initWithData:self.responseData encoding:NSASCIIStringEncoding];
     if([output isEqualToString:@"User Exists"]) {
-        self.emailLabel.text = @"email exists already!";
+        self.emailLabel.text = @"Email already exists!";
         self.emailLabel.textColor = [UIColor redColor];
     } else {
         self.jsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
         NSString *ID = [self.jsonArray objectForKey:@"UserId"];
         [defaults setObject:ID forKey:@"ID"];
-        [defaults setObject:self.NameTextField.text forKey:@"Firstname"];
-        [defaults setObject:self.LastNameTextField.text forKey:@"Lastname"];
+        [defaults setObject:self.NameTextField.text forKey:@"Name"];
         [defaults setObject:self.EmailTextField.text forKey:@"Email"];
         [defaults setObject:self.PhoneNumberTextField.text forKey:@"Phonenumber"];
         [defaults synchronize];
@@ -151,9 +144,11 @@
 -(void)createConnection {
     if([self.NameTextField hasText] && [self.EmailTextField hasText] && [self.PasswordTextField hasText] && [self.PhoneNumberTextField hasText]) {
         
-        NSString *newURL = [NSString stringWithFormat:@"%@%@/%@/%@/%@/%@/%@/%@/%@/%@", sendformURL, self.NameTextField.text, self.LastNameTextField.text , self.EmailTextField.text, self.PasswordTextField.text, self.PhoneNumberTextField.text, self.AddressTextField.text, self.CityTextField.text, self.StateTextField.text, self.ZipTextField.text ];
+        NSString *newURL = [NSString stringWithFormat:@"%@/%@/%@/%@/%@/%@/%@/%@/%@", sendformURL, self.NameTextField.text, self.EmailTextField.text, self.PasswordTextField.text, self.PhoneNumberTextField.text, self.AddressTextField.text, self.CityTextField.text, self.StateTextField.text, self.ZipTextField.text ];
         
         NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:newURL]];
+        
+        NSLog(@"%@", newURL);
         
         //request.HTTPMethod = @"POST";
         //[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];

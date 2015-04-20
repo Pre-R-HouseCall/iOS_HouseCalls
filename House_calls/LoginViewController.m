@@ -10,7 +10,6 @@
 #define userCheckURL @"http://54.191.98.90/api/1.0/check/"
 
 @interface LoginViewController () 
-@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (strong, nonatomic) IBOutlet UITextField *userNameField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordField;
 @property (strong, nonatomic) IBOutlet UILabel *handler;
@@ -98,19 +97,17 @@
     } else if([self.jsonArray count]) {
         NSLog(@"%lu\n", (unsigned long)[self.jsonArray count]);
         NSString* ID = [self.jsonArray objectForKey:@"UserId"];
-        NSString * Firstname = [self.jsonArray objectForKey:@"FirstName"];
-        NSString * Lastname = [self.jsonArray objectForKey:@"LastName"];
+        NSString * Name = [self.jsonArray objectForKey:@"Name"];
         NSString * Email = [self.jsonArray objectForKey:@"Email"];
         NSString * Password= [self.jsonArray objectForKey:@"Password"];
         NSString * Phonenumber= [self.jsonArray objectForKey:@"PhoneNumber"];
         [defaults setObject:ID forKey:@"ID"];
-        [defaults setObject:Firstname forKey:@"Firstname"];
-        [defaults setObject:Lastname forKey:@"Lastname"];
+        [defaults setObject:Name forKey:@"Name"];
         [defaults setObject:Email forKey:@"Email"];
         [defaults setObject:Password forKey:@"Password"];
         [defaults setObject:Phonenumber forKey:@"Phonenumber"];
         [defaults synchronize];
-        self.handler.text = @"Successful login!";
+        //self.handler.text = @"Successful login!";
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
 }

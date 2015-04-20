@@ -15,7 +15,6 @@
 @interface FormViewController ()
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
 @property (strong, nonatomic) IBOutlet UITextField *firstNameTextField;
-@property (strong, nonatomic) IBOutlet UITextField *lastNameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *phoneNumberTextField;
 @property (strong, nonatomic) IBOutlet UITextField *emailAddressField;
 @property (strong, nonatomic) IBOutlet UIButton *currentLocationButton;
@@ -42,7 +41,6 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.navItem.title= [NSString stringWithFormat:@"Form for Dr. %@", [self.doc getFullName]];
     self.firstNameTextField.text = [defaults objectForKey:@"Firstname"];
-    self.lastNameTextField.text = [defaults objectForKey:@"Lastname"];
     self.phoneNumberTextField.text = [defaults objectForKey:@"Phonenumber"];
     self.emailAddressField.text = [defaults objectForKey:@"Email"];
     self.pressed = NO;
@@ -55,11 +53,6 @@
     self.phoneNumberTextField.layer.borderWidth = 0.00001;
     self.phoneNumberTextField.backgroundColor = [UIColor colorWithRed:220.0f/255.0f green:220.0f/255.0f blue:220.0f/255.0f alpha:1.0];
     self.phoneNumberTextField.layer.borderColor = [[UIColor colorWithRed:220.0f/255.0f green:220.0f/255.0f blue:220.0f/255.0f alpha:0.001] CGColor];
-    
-    self.lastNameTextField.layer.cornerRadius = 8.0;
-    self.lastNameTextField.layer.borderWidth = 0.0001;
-    self.lastNameTextField.backgroundColor = [UIColor colorWithRed:220.0f/255.0f green:220.0f/255.0f blue:220.0f/255.0f alpha:1.0];
-        self.lastNameTextField.layer.borderColor = [[UIColor colorWithRed:220.0f/255.0f green:220.0f/255.0f blue:220.0f/255.0f alpha:1.0] CGColor];
     
     self.emailAddressField.layer.cornerRadius = 8.0;
     self.emailAddressField.layer.borderWidth = 0.0001;
@@ -156,15 +149,15 @@
     NSString *sqlDate = [dateFormatter stringFromDate: date];
     NSLog(@"%@\n", sqlDate);
     NSString *newURL;
-    if([self.firstNameTextField hasText] && [self.lastNameTextField hasText] && [self.emailAddressField hasText] ){
+    if([self.firstNameTextField hasText] && [self.emailAddressField hasText] ){
         if(self.pressed) {
             
-            newURL = [NSString stringWithFormat:@"%@%@/%@/%@/%@/%@/%@/%@/%f/%f/NULL/NULL/NULL/%@", sendformURL, self.doc.docID, id, self.firstNameTextField.text, self.lastNameTextField.text, self.emailAddressField.text, self.phoneNumberTextField.text, self.symptomstextField.text, (double)self.lat, (double)self.longitude, sqlDate];
+            newURL = [NSString stringWithFormat:@"%@%@/%@/%@/%@/%@/%@/%f/%f/NULL/NULL/NULL/%@", sendformURL, self.doc.docID, id, self.firstNameTextField.text, self.emailAddressField.text, self.phoneNumberTextField.text, self.symptomstextField.text, (double)self.lat, (double)self.longitude, sqlDate];
             NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:newURL]];
             NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
             NSLog(@"%@\n", newURL);
         } else {
-        newURL = [NSString stringWithFormat:@"%@%@/%@/%@/%@/%@/%@/%@/NULL/NULL/%@/%@/%@/%@", sendformURL, self.doc.docID, id, self.firstNameTextField.text, self.lastNameTextField.text, self.emailAddressField.text, self.phoneNumberTextField.text, self.symptomstextField.text, self.streetAddressTextField.text, self.cityTextField.text, self.stateTextField.text, sqlDate];
+        newURL = [NSString stringWithFormat:@"%@%@/%@/%@/%@/%@/%@/NULL/NULL/%@/%@/%@/%@", sendformURL, self.doc.docID, id, self.firstNameTextField.text, self.emailAddressField.text, self.phoneNumberTextField.text, self.symptomstextField.text, self.streetAddressTextField.text, self.cityTextField.text, self.stateTextField.text, sqlDate];
         NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:newURL]];
         NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
         NSLog(@"%@\n", newURL);

@@ -136,7 +136,7 @@
     if(self.selectedIndex == indexPath.row) {
         self.selectedIndex = -1;
         [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        DoctorCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+        DoctorCell* cell = (DoctorCell *)[tableView cellForRowAtIndexPath:indexPath];
         cell.buttonToBio.hidden = YES;
         cell.buttonToForm.hidden = YES;
         cell.seeButton.hidden = YES;
@@ -148,7 +148,7 @@
         self.selectedIndex = indexPath.row;
         [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:prevpath] withRowAnimation:UITableViewRowAnimationFade];
         
-        DoctorCell* cell = [tableView cellForRowAtIndexPath:prevpath];
+        DoctorCell* cell = (DoctorCell *)[tableView cellForRowAtIndexPath:prevpath];
         cell.buttonToBio.hidden = YES;
         cell.buttonToForm.hidden = YES;
         cell.seeButton.hidden = YES;
@@ -157,7 +157,7 @@
     }
     self.selectedIndex = indexPath.row;
     [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    DoctorCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+    DoctorCell* cell = (DoctorCell *)[tableView cellForRowAtIndexPath:indexPath];
     cell.buttonToBio.hidden = NO;
     cell.buttonToForm.hidden = NO;
     cell.seeButton.hidden = NO;
