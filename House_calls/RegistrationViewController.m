@@ -153,6 +153,7 @@
         //request.HTTPMethod = @"POST";
         //[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
         NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        [conn description];
     }
 }
 
