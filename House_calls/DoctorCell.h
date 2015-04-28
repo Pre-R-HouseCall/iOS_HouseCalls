@@ -15,7 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *doctorDistance;
 @property (strong, nonatomic) IBOutlet UIImageView *availImage;
 @property (strong, nonatomic) IBOutlet UIButton *seeButton;
-@property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UITextView *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *waitRoomLabel;
 
 -(instancetype)initWithIdentifier:(NSString*)identifier;
 

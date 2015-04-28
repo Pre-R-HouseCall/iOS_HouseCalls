@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:0 forKey:@"FormActive"];
     _pageTitles = @[@"", @"", @"", @""]; //, @"Free Regular Update"
     _pageImages = @[@"Tutorial_1.png", @"Tutorial_2.png", @"Tutorial_3.png", @"Tutorial_4.png"];  //, @"page4.png"
     

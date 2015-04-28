@@ -52,6 +52,8 @@
     [self user];
     [super viewDidLoad];
     
+   
+    
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
     {
@@ -100,9 +102,16 @@
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     DoctorCell *doctorCell = [tableView dequeueReusableCellWithIdentifier:@"doctorCell"];
     Doctors* tempdoc = [self.doctorArray objectAtIndex:indexPath.row];
-   
+   /*
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if([defaults integerForKey:@"FormActive"]) {
+        doctorCell.waitRoomLabel.text = @"Patient(s) Ahead: 2";
+    }*/
+    
+    
     if (tempdoc) {
         doctorCell.doctorName.text  = [tempdoc getFullName];
         doctorCell.doctorDistance.text = tempdoc.docDistance;
@@ -165,17 +174,18 @@
 }
 
 -(void) formButtonClicked:(UIButton*)sender {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-
-    if([defaults objectForKey:@"ID"] != NULL && ![defaults integerForKey:@"FormActive"]) {
+    /*[defaults objectForKey:@"ID"] != NULL && */
+    //if(![defaults integerForKey:@"FormActive"]) {
         [self performSegueWithIdentifier:@"segueForm" sender: sender];
-    }
+    //}
+    /*
     else if([defaults integerForKey:@"FormActive"]) {
         [self performSegueWithIdentifier:@"waitingRoom" sender:self];
     }
     else {
         [self performSegueWithIdentifier:@"segueLogin" sender:sender];
     }
+     */
 }
 
 -(void)bioButtonClicked:(UIButton*)sender {

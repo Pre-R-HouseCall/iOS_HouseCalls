@@ -32,7 +32,7 @@
     NSLog(@"View did appear.");
     [self.view setNeedsDisplay];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if([defaults objectForKey:@"ID"] != NULL) { /*user is logged in*/
+    if([defaults integerForKey:@"FormActive"]) { /*user is logged in*/
         self.userName.text = [NSString stringWithFormat:@"%@", [defaults objectForKey:@"Name"]];
         [_signInOut setTitle:@"Sign Out" forState:UIControlStateNormal];
         self.waitState.text = @"(2) People Ahead";
@@ -64,6 +64,7 @@
         [self.view setNeedsDisplay];
         self.waitState.text = @"No form submitted";
     } else {
+        [self performSegueWithIdentifier:@"SignInSegue" sender:sender];
     }
 }
 @end

@@ -10,7 +10,7 @@
 #import "Doctors.h"
 @interface BioViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *statusText;
-@property (weak, nonatomic) IBOutlet UILabel *bioText;
+@property (weak, nonatomic) IBOutlet UITextView *bioText;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
 @property (weak, nonatomic) IBOutlet UILabel *doctorName;
 @property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
@@ -43,7 +43,7 @@
 
 -(void) setLabels {
     self.bioText.text = self.doc.docDescription;
-    self.navItem.title = [self.doc getFullName];
+    self.navItem.title = @"Pre-R";
     self.statusText.text = self.doc.docAvailable;
     self.doctorName.text = [NSString stringWithFormat:@"%@ %@", self.doc.docFirstname, self.doc.docLastname];
     self.distanceLabel.text = self.doc.docDistance;

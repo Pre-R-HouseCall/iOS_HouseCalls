@@ -39,7 +39,7 @@
     self.locationManager = [[CLLocationManager alloc] init];
     self.mapview.delegate = self;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    self.navItem.title= [NSString stringWithFormat:@"Form for Dr. %@", [self.doc getFullName]];
+    self.navItem.title= [NSString stringWithFormat:@"Pre-R"];
     self.firstNameTextField.text = [defaults objectForKey:@"Firstname"];
     self.phoneNumberTextField.text = [defaults objectForKey:@"Phonenumber"];
     self.emailAddressField.text = [defaults objectForKey:@"Email"];
@@ -165,7 +165,8 @@
         NSLog(@"%@\n", newURL);
      }
     [defaults setInteger:1 forKey:@"FormActive"];
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self performSegueWithIdentifier:@"submitedSegue" sender:sender];
+    //[self.navigationController popToRootViewControllerAnimated:YES];
     }
     
 }

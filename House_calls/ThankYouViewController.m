@@ -1,28 +1,30 @@
 //
-//  TutorialPageContentViewController.m
+//  ThankYouViewController.m
 //  House_calls
 //
-//  Created by Marek Zhang on 1/14/15.
+//  Created by Marek Zhang on 4/27/15.
 //  Copyright (c) 2015 Timothy Acorda. All rights reserved.
 //
 
-#import "TutorialPageContentViewController.h"
+#import "ThankYouViewController.h"
 
-@interface TutorialPageContentViewController ()
+@interface ThankYouViewController ()
 
 @end
 
-@implementation TutorialPageContentViewController
+@implementation ThankYouViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.backgroundImageView.image = [UIImage imageNamed:self.imageFile];
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)okPressed:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 /*
