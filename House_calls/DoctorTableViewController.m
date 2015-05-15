@@ -262,7 +262,7 @@
         NSString * dID = [[self.jsonArray objectAtIndex:i] objectForKey:@"DoctorId"];
         NSString * dFirstname = [[self.jsonArray objectAtIndex:i] objectForKey:@"FirstName"];
         NSString * dLastname = [[self.jsonArray objectAtIndex:i] objectForKey:@"LastName"];
-        NSString * dUsername = [[self.jsonArray objectAtIndex:i] objectForKey:@"Username"];
+        NSString * dUsername = [[self.jsonArray objectAtIndex:i] objectForKey:@"Email"];
         NSString * dAvailable = [[self.jsonArray objectAtIndex:i] objectForKey:@"Availability"];
         NSString * dDistance = [[self.jsonArray objectAtIndex:i] objectForKey:@"Distance"];
         NSString * dDescription = [[self.jsonArray objectAtIndex:i] objectForKey:@"Description"];

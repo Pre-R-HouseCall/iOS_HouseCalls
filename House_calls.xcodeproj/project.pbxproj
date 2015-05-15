@@ -49,6 +49,8 @@
 		EA116E801AB03E000028271D /* menu_usericon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA116E7E1AB03E000028271D /* menu_usericon.png */; };
 		EA116E811AB03E000028271D /* menu_divider.png in Resources */ = {isa = PBXBuildFile; fileRef = EA116E7F1AB03E000028271D /* menu_divider.png */; };
 		EA116E831AB043B60028271D /* login_orangebox.png in Resources */ = {isa = PBXBuildFile; fileRef = EA116E821AB043B60028271D /* login_orangebox.png */; };
+		EA911AAD1B05CFB400F3024C /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA911AAC1B05CFB400F3024C /* MyProfileViewController.m */; };
+		EA911AB01B05D43100F3024C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA911AAF1B05D43100F3024C /* SettingsViewController.m */; };
 		EAD599651AAC63E70015BE1C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD599641AAC63E70015BE1C /* SWRevealViewController.m */; };
 		EAD599681AAC679A0015BE1C /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD599671AAC679A0015BE1C /* SidebarViewController.m */; };
 /* End PBXBuildFile section */
@@ -122,6 +124,10 @@
 		EA116E7E1AB03E000028271D /* menu_usericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_usericon.png; sourceTree = "<group>"; };
 		EA116E7F1AB03E000028271D /* menu_divider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_divider.png; sourceTree = "<group>"; };
 		EA116E821AB043B60028271D /* login_orangebox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_orangebox.png; sourceTree = "<group>"; };
+		EA911AAB1B05CFB400F3024C /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
+		EA911AAC1B05CFB400F3024C /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
+		EA911AAE1B05D43100F3024C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		EA911AAF1B05D43100F3024C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		EAD599631AAC63E70015BE1C /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		EAD599641AAC63E70015BE1C /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		EAD599661AAC679A0015BE1C /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
@@ -186,6 +192,10 @@
 				2EBE7D421A65997F00D76DDA /* LoginViewController.h */,
 				2EBE7D431A65997F00D76DDA /* LoginViewController.m */,
 				2EBE7D451A65997F00D76DDA /* Main.storyboard */,
+				EA911AAE1B05D43100F3024C /* SettingsViewController.h */,
+				EA911AAF1B05D43100F3024C /* SettingsViewController.m */,
+				EA911AAB1B05CFB400F3024C /* MyProfileViewController.h */,
+				EA911AAC1B05CFB400F3024C /* MyProfileViewController.m */,
 				2EBF45581A7732CC001BA7A6 /* User.h */,
 				2EBF45591A7732CC001BA7A6 /* User.m */,
 				2EBF45521A76F7B0001BA7A6 /* BioViewController.h */,
@@ -412,10 +422,12 @@
 				EAD599681AAC679A0015BE1C /* SidebarViewController.m in Sources */,
 				2E0966751A67A2B700FC1604 /* DoctorTableViewController.m in Sources */,
 				2EBE7D441A65997F00D76DDA /* LoginViewController.m in Sources */,
+				EA911AB01B05D43100F3024C /* SettingsViewController.m in Sources */,
 				2EBF455A1A7732CC001BA7A6 /* User.m in Sources */,
 				2EBF45571A7710CD001BA7A6 /* FormViewController.m in Sources */,
 				2EA905A91A75BDA300E50502 /* DoctorCell.m in Sources */,
 				2EA905A61A75B88C00E50502 /* Doctors.m in Sources */,
+				EA911AAD1B05CFB400F3024C /* MyProfileViewController.m in Sources */,
 				2EBF45541A76F7B0001BA7A6 /* BioViewController.m in Sources */,
 				2EBE7D411A65997F00D76DDA /* AppDelegate.m in Sources */,
 				2EBE7D3E1A65997F00D76DDA /* main.m in Sources */,

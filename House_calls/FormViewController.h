@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 
 #import "Doctors.h"
-@interface FormViewController : UIViewController <CLLocationManagerDelegate , MKMapViewDelegate, NSURLConnectionDelegate>
+@interface FormViewController : UIViewController <CLLocationManagerDelegate , MKMapViewDelegate, NSURLConnectionDelegate, UIScrollViewDelegate>
 @property Doctors* doc;
 @property CLLocationManager *locationManager;
 @end

@@ -10,6 +10,7 @@
 #import "DoctorTableViewController.h"
 #import <MapKit/MapKit.h>
 
+#define kOFFSET_FOR_KEYBOARD 80.0
 #define sendformURL @"http://54.191.98.90/api/1.0/addForm/"
 
 @interface FormViewController ()
@@ -34,6 +35,8 @@
 @end
 
 @implementation FormViewController
+
+@synthesize symptomstextField = _symptomstextField;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -174,7 +177,10 @@
     }
     
 }
-       
+
+
+/* Move Keyboard */
+
 
 /*
 #pragma mark - Navigation
