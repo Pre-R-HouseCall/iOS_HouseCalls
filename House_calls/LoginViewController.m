@@ -145,7 +145,7 @@
     // Convert your data and set your request's HTTPBody property
     // Create url connection and fire request
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    
+    [conn description];
     
 }
 @end

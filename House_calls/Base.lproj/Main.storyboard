@@ -191,17 +191,17 @@
                     </navigationItem>
                     <connections>
                         <outlet property="navItem" destination="c0d-bA-kbI" id="ftd-P0-DZ6"/>
-                        <segue destination="DEW-PV-hxp" kind="show" id="3wt-Uh-dtC"/>
+                        <segue destination="DEW-PV-hxp" kind="show" identifier="submitedSegue" id="3wt-Uh-dtC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iej-fG-PR2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1954.5" y="-342.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Wait Room View Controller-->
         <scene sceneID="PaX-fd-efI">
             <objects>
-                <viewController id="DEW-PV-hxp" sceneMemberID="viewController">
+                <viewController id="DEW-PV-hxp" customClass="WaitRoomViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sB9-ab-NnL"/>
                         <viewControllerLayoutGuide type="bottom" id="IXn-QA-rJR"/>
@@ -209,6 +209,17 @@
                     <view key="view" contentMode="scaleToFill" id="yIY-ox-2mD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QI-u1-6Qe">
+                                <rect key="frame" x="164" y="585" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="okPressed:" destination="DEW-PV-hxp" eventType="touchUpInside" id="Aj2-nt-gD6"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
@@ -712,16 +723,16 @@
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oMZ-eR-pJm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oMZ-eR-pJm">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="672"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="oMZ-eR-pJm" firstAttribute="top" secondItem="Idv-hU-rRJ" secondAttribute="topMargin" id="Hdy-dj-qyM"/>
-                            <constraint firstItem="oMZ-eR-pJm" firstAttribute="leading" secondItem="Idv-hU-rRJ" secondAttribute="leadingMargin" constant="-22" id="WWc-SP-kiM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="oMZ-eR-pJm" secondAttribute="trailing" constant="-22" id="r9z-cF-f3X"/>
-                            <constraint firstItem="Xpc-vl-4L8" firstAttribute="top" secondItem="oMZ-eR-pJm" secondAttribute="bottom" id="rnb-wo-ZV1"/>
+                            <constraint firstItem="oMZ-eR-pJm" firstAttribute="leading" secondItem="Idv-hU-rRJ" secondAttribute="leadingMargin" constant="-16" id="WWc-SP-kiM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oMZ-eR-pJm" secondAttribute="trailing" constant="-16" id="r9z-cF-f3X"/>
+                            <constraint firstItem="Xpc-vl-4L8" firstAttribute="top" secondItem="oMZ-eR-pJm" secondAttribute="bottom" constant="-5" id="rnb-wo-ZV1"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

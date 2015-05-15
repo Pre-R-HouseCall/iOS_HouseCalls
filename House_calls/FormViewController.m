@@ -165,15 +165,17 @@
             newURL = [NSString stringWithFormat:@"%@%@/%@/%@/%@/%@/%@/%@/%f/%f/NULL/NULL/NULL/%@", sendformURL, self.doc.docID, id, self.firstNameTextField.text, self.lastNameTextField.text, self.emailAddressField.text, self.phoneNumberTextField.text, self.symptomstextField.text, (double)self.lat, (double)self.longitude, sqlDate];
             NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:newURL]];
             NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+            [conn description];
             NSLog(@"%@\n", newURL);
         } else {
         newURL = [NSString stringWithFormat:@"%@%@/%@/%@/%@/%@/%@/%@/NULL/NULL/%@/%@/%@/%@", sendformURL, self.doc.docID, id, self.firstNameTextField.text, self.lastNameTextField.text, self.emailAddressField.text, self.phoneNumberTextField.text, self.symptomstextField.text, self.streetAddressTextField.text, self.cityTextField.text, self.stateTextField.text, sqlDate];
         NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:newURL]];
         NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+            [conn description];
         NSLog(@"%@\n", newURL);
      }
     [defaults setInteger:1 forKey:@"FormActive"];
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self performSegueWithIdentifier:@"submitedSegue" sender:sender];
     }
     
 }

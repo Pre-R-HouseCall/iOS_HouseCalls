@@ -51,6 +51,7 @@
 		EA116E831AB043B60028271D /* login_orangebox.png in Resources */ = {isa = PBXBuildFile; fileRef = EA116E821AB043B60028271D /* login_orangebox.png */; };
 		EA911AAD1B05CFB400F3024C /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA911AAC1B05CFB400F3024C /* MyProfileViewController.m */; };
 		EA911AB01B05D43100F3024C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA911AAF1B05D43100F3024C /* SettingsViewController.m */; };
+		EA911AB51B06630900F3024C /* WaitRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA911AB41B06630900F3024C /* WaitRoomViewController.m */; };
 		EAD599651AAC63E70015BE1C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD599641AAC63E70015BE1C /* SWRevealViewController.m */; };
 		EAD599681AAC679A0015BE1C /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD599671AAC679A0015BE1C /* SidebarViewController.m */; };
 /* End PBXBuildFile section */
@@ -128,6 +129,8 @@
 		EA911AAC1B05CFB400F3024C /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
 		EA911AAE1B05D43100F3024C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		EA911AAF1B05D43100F3024C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		EA911AB31B06630900F3024C /* WaitRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitRoomViewController.h; sourceTree = "<group>"; };
+		EA911AB41B06630900F3024C /* WaitRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitRoomViewController.m; sourceTree = "<group>"; };
 		EAD599631AAC63E70015BE1C /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		EAD599641AAC63E70015BE1C /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		EAD599661AAC679A0015BE1C /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
@@ -206,6 +209,8 @@
 				2E0966741A67A2B700FC1604 /* DoctorTableViewController.m */,
 				2EBF45551A7710CD001BA7A6 /* FormViewController.h */,
 				2EBF45561A7710CD001BA7A6 /* FormViewController.m */,
+				EA911AB31B06630900F3024C /* WaitRoomViewController.h */,
+				EA911AB41B06630900F3024C /* WaitRoomViewController.m */,
 				2EBE7D481A65997F00D76DDA /* Images.xcassets */,
 				2EBE7D4A1A65997F00D76DDA /* LaunchScreen.xib */,
 				2EBE7D3B1A65997F00D76DDA /* Supporting Files */,
@@ -420,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAD599681AAC679A0015BE1C /* SidebarViewController.m in Sources */,
+				EA911AB51B06630900F3024C /* WaitRoomViewController.m in Sources */,
 				2E0966751A67A2B700FC1604 /* DoctorTableViewController.m in Sources */,
 				2EBE7D441A65997F00D76DDA /* LoginViewController.m in Sources */,
 				EA911AB01B05D43100F3024C /* SettingsViewController.m in Sources */,
