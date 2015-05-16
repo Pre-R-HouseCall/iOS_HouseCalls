@@ -52,6 +52,8 @@
 		EA911AAD1B05CFB400F3024C /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA911AAC1B05CFB400F3024C /* MyProfileViewController.m */; };
 		EA911AB01B05D43100F3024C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA911AAF1B05D43100F3024C /* SettingsViewController.m */; };
 		EA911AB51B06630900F3024C /* WaitRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA911AB41B06630900F3024C /* WaitRoomViewController.m */; };
+		EAB2C0FF1B06BF5500707590 /* User_Profile.png in Resources */ = {isa = PBXBuildFile; fileRef = EAB2C0FE1B06BF5500707590 /* User_Profile.png */; };
+		EAB2C1011B06C09200707590 /* Edit_no-text.png in Resources */ = {isa = PBXBuildFile; fileRef = EAB2C1001B06C09200707590 /* Edit_no-text.png */; };
 		EAD599651AAC63E70015BE1C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD599641AAC63E70015BE1C /* SWRevealViewController.m */; };
 		EAD599681AAC679A0015BE1C /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD599671AAC679A0015BE1C /* SidebarViewController.m */; };
 /* End PBXBuildFile section */
@@ -131,6 +133,8 @@
 		EA911AAF1B05D43100F3024C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		EA911AB31B06630900F3024C /* WaitRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitRoomViewController.h; sourceTree = "<group>"; };
 		EA911AB41B06630900F3024C /* WaitRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitRoomViewController.m; sourceTree = "<group>"; };
+		EAB2C0FE1B06BF5500707590 /* User_Profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = User_Profile.png; sourceTree = "<group>"; };
+		EAB2C1001B06C09200707590 /* Edit_no-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Edit_no-text.png"; sourceTree = "<group>"; };
 		EAD599631AAC63E70015BE1C /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		EAD599641AAC63E70015BE1C /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		EAD599661AAC679A0015BE1C /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
@@ -221,6 +225,8 @@
 		2EBE7D3B1A65997F00D76DDA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EAB2C1001B06C09200707590 /* Edit_no-text.png */,
+				EAB2C0FE1B06BF5500707590 /* User_Profile.png */,
 				2E7F72401AB03CE60040A663 /* submitted_back.png */,
 				2E7F723E1AB03B910040A663 /* submitted_checkmark.png */,
 				2E7F723C1AB02FBA0040A663 /* form_checkbox.png */,
@@ -388,6 +394,7 @@
 				2E7F72411AB03CE60040A663 /* submitted_back.png in Resources */,
 				EA116E801AB03E000028271D /* menu_usericon.png in Resources */,
 				EA116E7B1AB034210028271D /* Tutorial_4.png in Resources */,
+				EAB2C1011B06C09200707590 /* Edit_no-text.png in Resources */,
 				2E429F8D1AAD743F00DBE0C4 /* NavBar_wordmark.png in Resources */,
 				EA116E7D1AB034210028271D /* Tutorial_1.png in Resources */,
 				2E1163301AAEEC2400D45186 /* Request_Dcotor.png in Resources */,
@@ -402,6 +409,7 @@
 				2EBF45641A7762EF001BA7A6 /* page1.png in Resources */,
 				2EBE7D491A65997F00D76DDA /* Images.xcassets in Resources */,
 				2E429F8F1AAD830400DBE0C4 /* NavBar_menu_icon2.png in Resources */,
+				EAB2C0FF1B06BF5500707590 /* User_Profile.png in Resources */,
 				2E1163341AAEEC2E00D45186 /* indicator_available.png in Resources */,
 				2E1163321AAEEC2800D45186 /* Doctor_Profile.png in Resources */,
 				2E7F723D1AB02FBA0040A663 /* form_checkbox.png in Resources */,

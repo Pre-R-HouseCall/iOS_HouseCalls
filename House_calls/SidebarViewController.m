@@ -1,3 +1,4 @@
+
 //
 //  SidebarViewController.m
 //  House_calls
@@ -31,6 +32,17 @@
         self.userName.text = @"Not Logged In";
     }
 
+}
+
+- (IBAction)resetErthing:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:0 forKey:@"FormActive"];
+    [defaults setObject:nil forKey:@"ID"];
+    [defaults setObject:nil forKey:@"Firstname"];
+    [defaults setObject:nil forKey:@"Lastname"];
+    [defaults setObject:nil forKey:@"Email"];
+    [defaults setObject:nil forKey:@"Phonenumber"];
+    [defaults synchronize];
 }
 
 -(void)reloadSettings {

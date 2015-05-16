@@ -21,11 +21,15 @@
 @property (strong, nonatomic, retain) IBOutlet UIButton *HIPPAButton;
 @property (strong, nonatomic) IBOutlet UIButton *SubmitButton;
 @property (strong, nonatomic) IBOutlet UILabel *emailLabel;
-@property (strong, nonatomic) IBOutlet UITextField *LastNameTextField;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
 @end
 
 
 @implementation RegistrationViewController
+
+@synthesize scrollView = _scrollView;
+int flag;
 
 -(NSMutableDictionary *)jsonArray {
     if(!(_jsonArray)) {
@@ -38,10 +42,7 @@
     
     [super viewDidLoad];
     
-    self.LastNameTextField.layer.borderWidth = 0.1;
-    self.LastNameTextField.layer.cornerRadius = 8.0;
-    self.LastNameTextField.clipsToBounds = YES;
-    [self.LastNameTextField.layer setMasksToBounds:YES];
+    flag = 0;
     
    self.NameTextField.layer.borderWidth = 0.01;
    self.NameTextField.layer.cornerRadius = 8.0;
@@ -90,6 +91,11 @@
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
+    
+    [self.NameTextField addTarget:self action:@selector(textFieldDidBeginEditing:) forControlEvents:UIControlEventAllEvents];
+    [self.EmailTextField addTarget:self action:@selector(textFieldDidBeginEditing:) forControlEvents:UIControlEventAllEvents];
+    [self.PasswordTextField addTarget:self action:@selector(textFieldDidBeginEditing:) forControlEvents:UIControlEventAllEvents];
+    
 }
 
 -(void)dismissKeyboard {
@@ -118,8 +124,7 @@
         self.jsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
         NSString *ID = [self.jsonArray objectForKey:@"UserId"];
         [defaults setObject:ID forKey:@"ID"];
-        [defaults setObject:self.NameTextField.text forKey:@"Firstname"];
-        [defaults setObject:self.LastNameTextField.text forKey:@"Lastname"];
+        [defaults setObject:self.NameTextField.text forKey:@"Name"];
         [defaults setObject:self.EmailTextField.text forKey:@"Email"];
         [defaults setObject:self.PhoneNumberTextField.text forKey:@"Phonenumber"];
         [defaults synchronize];
@@ -151,7 +156,7 @@
 -(void)createConnection {
     if([self.NameTextField hasText] && [self.EmailTextField hasText] && [self.PasswordTextField hasText] && [self.PhoneNumberTextField hasText]) {
         
-        NSString *newURL = [NSString stringWithFormat:@"%@%@/%@/%@/%@/%@/%@/%@/%@/%@", sendformURL, self.NameTextField.text, self.LastNameTextField.text , self.EmailTextField.text, self.PasswordTextField.text, self.PhoneNumberTextField.text, self.AddressTextField.text, self.CityTextField.text, self.StateTextField.text, self.ZipTextField.text ];
+        NSString *newURL = [NSString stringWithFormat:@"%@%@/%@/%@/%@/%@/%@/%@/%@", sendformURL, self.NameTextField.text, self.EmailTextField.text, self.PasswordTextField.text, self.PhoneNumberTextField.text, self.AddressTextField.text, self.CityTextField.text, self.StateTextField.text, self.ZipTextField.text ];
         
         NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:newURL]];
         
@@ -161,6 +166,81 @@
         [conn description];
     }
 }
+
+/**
+ *
+ * Called from selectors of Name, Email, and Password Text Fields
+ * when the user selects that text field. 
+ */
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField {
+    NSLog(@"The method was called");
+    flag = 1;
+}
+
+
+
+
+/* Scroll View For Keyboard */
+
+- (void)registerForKeyboardNotifications {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                            selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+}
+
+- (void)deregisterFromKeyboardNotifications {
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillHideNotification
+                                                  object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillHideNotification
+                                                  object:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self registerForKeyboardNotifications];
+    flag = 0;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self deregisterFromKeyboardNotifications];
+    [super viewWillDisappear:animated];
+    flag = 0;
+}
+
+- (void)keyboardWasShown:(NSNotification *)notification {
+    NSDictionary* info = [notification userInfo];
+    CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    CGPoint buttonOrigin = self.SubmitButton.frame.origin;
+    //CGPoint cityOrgin = self.CityTextField.frame.origin;
+    //CGPoint stateOrigin = self.StateTextField.frame.origin;
+    
+    CGFloat buttonHeight = self.SubmitButton.frame.size.height;
+    CGRect visibleRect = self.view.frame;
+    visibleRect.size.height -= keyboardSize.height;
+    
+    if (!CGRectContainsPoint(visibleRect, buttonOrigin)){
+        CGPoint scrollPoint = CGPointMake(0.0, buttonOrigin.y + (_scrollView.frame.origin.y) - visibleRect.size.height + buttonHeight);
+        if(flag == 0) {
+            [self.scrollView setContentOffset:scrollPoint animated:YES];
+        }
+        flag = 0;
+    }
+}
+
+- (void)keyboardWillBeHidden:(NSNotification *)notification {
+    [self.scrollView setContentOffset:CGPointZero animated:YES];
+    flag = 0;
+}
+
 
 
 

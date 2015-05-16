@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-#define userCheckURL @"http://54.191.98.90/api/1.0/check/"
+#define userCheckURL @"http://54.191.98.90/api/1.0/checkUser/"
 
 @interface LoginViewController () 
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
@@ -19,6 +19,8 @@
 
 
 @implementation LoginViewController
+
+int flag;
 
 - (IBAction)pressedCheck:(id)sender {
     [self createConnection];
@@ -37,11 +39,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    flag = 0;
     // Do any additional setup after loading the view, typically from a nib.
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
+    
+    
 }
 
 -(void)dismissKeyboard {

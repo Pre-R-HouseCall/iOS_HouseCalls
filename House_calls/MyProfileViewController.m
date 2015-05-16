@@ -14,9 +14,22 @@
 
 @implementation MyProfileViewController
 
+@synthesize image = _image;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if([defaults objectForKey:@"ID"] != NULL) {
+    } else {
+    }
+    
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://s3-us-west-2.amazonaws.com/prer-doctor/Sam_Profile_Cropped.png"]];
+    UIImage *pic = [UIImage imageWithData:data];
+    self.image.image = pic;
+    
+    self.image.frame = CGRectMake(self.image.frame.origin.x, self.image.frame.origin.y, 150.0, 150.0);
+    
 }
 
 - (void)didReceiveMemoryWarning {
